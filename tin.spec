@@ -14,9 +14,8 @@ Group(pl):	Aplikacje/News
 Source0:	ftp://ftp.tin.org/pub/news/clients/tin/unstable/snapshots/%{name}-%{version}.tar.bz2
 Source1:	%{name}.desktop
 Patch0:		%{name}-enable_coloring.patch
-#Patch1:		%{name}-with_system_pcre.patch
-Patch2:		%{name}-ncurses.patch
-Patch3:		%{name}-range.patch
+Patch1:		%{name}-ncurses.patch
+Patch2:		%{name}-range.patch
 URL:		http://www.tin.org/
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	pcre-devel
@@ -60,20 +59,21 @@ okuyabilir.
 %prep
 %setup -q
 %patch0 -p1
-#%patch1 -p1
+%patch1 -p1
 %patch2 -p1
-%patch3 -p1
 
 %build
+LDFLAGS="%{rpmldflags} -lpcre"
 %configure2_13 \
 	--enable-nls \
 	--enable-color \
+	--with-pcre \
 	--with-ncurses \
 	--with-nov-dir=%{_var}/spool/news \
 	--with-spooldir=%{_var}/spool/news \
 	--enable-locale \
 	--with-gpg=%{_bindir}/gpg \
-	--with-mailer=%{_sbindir}/sendmail \
+	--with-mailer=%{_libdir}/sendmail \
 	--enable-ipv6 \
 	--disable-debug
 
