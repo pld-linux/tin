@@ -1,4 +1,4 @@
-%define date 19990517
+%define date 19990624
 Summary:	tin News Reader
 Summary(de):	tin News-Reader
 Summary(fr):	Lecteur de news tin.
