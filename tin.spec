@@ -68,6 +68,7 @@ LDFLAGS="%{rpmldflags} -lpcre"
 %configure2_13 \
 	--enable-nls \
 	--enable-color \
+	--disable-mime-strict-charset \
 	--with-pcre \
 	--with-ncurses \
 	--with-nov-dir=%{_var}/spool/news \
