@@ -11,13 +11,13 @@ Summary(ru):	tin - программа для чтения телеконференций Usenet
 Summary(tr):	Haber okuyucu
 Summary(uk):	tin - програма для читання телеконференц╕й Usenet
 Name:		tin
-Version:	1.5.18
+Version:	1.6.0
 Release:	1
 Epoch:		5
 License:	distributable
 Group:		Applications/News
-Source0:	ftp://ftp.tin.org/pub/news/clients/tin/v1.5/%{name}-%{version}.tar.bz2
-# Source0-md5:	9616c9b800087a660b9098fa1cd79cbf
+Source0:	ftp://ftp.tin.org/pub/news/clients/tin/v1.6/%{name}-%{version}.tar.bz2
+# Source0-md5:	d79cd8fca1e25f1d1383bcc0f61a8c29
 Source1:	%{name}.desktop
 Source2:	%{name}.attributes
 Patch0:		%{name}-enable_coloring.patch
