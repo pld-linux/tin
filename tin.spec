@@ -79,7 +79,7 @@ install doc/tin.defaults $RPM_BUILD_ROOT/etc
 
 echo ".so tin.1" > $RPM_BUILD_ROOT/usr/share/man/man1/rtin.1
 
-gzip -9nf $RPM_BUILD_ROOT/usr/man/man1/* \
+gzip -9nf $RPM_BUILD_ROOT/usr/share/man/man1/* \
 	{README,MANIFEST,doc/{CHANGES,TODO,DEBUG_REFS,WHATSNEW,*.txt}}
 
 %clean
