@@ -4,19 +4,19 @@ Summary(fr):	Lecteur de news tin
 Summary(pl):	tin - czytnik newsów
 Summary(tr):	Haber okuyucu
 Name:		tin
-Version:	1.5.6
+Version:	1.5.7
 Release:	1
-Serial:		2
 Copyright:	distributable
 Group:		Applications/News
 Group(pl):	Aplikacje/News
-Source0:	ftp://ftp.tin.org/pub/news/clients/tin/unstable/%{name}-%{version}.tar.bz2
+Source0:	ftp://ftp.tin.org/pub/news/clients/tin/unstable/snapshots/%{name}-%{version}.tar.bz2
 Patch0:		tin-enable_coloring.patch
 Patch1:		tin-with_system_pcre.patch
-#Patch2:	tin-old-style.patch
+Patch2:		tin-ncurses.patch
 URL:		http://www.tin.org/
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	pcre-devel
+BuildRequires:	metamail
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -58,19 +58,19 @@ okuyabilir.
 %setup -q
 %patch0 -p1
 %patch1 -p1
-#%patch2 -p2
+%patch2 -p1
 
 %build
-CPPFLAGS="-DINET6"
-LDFLAGS="-s"
-CFLAGS="-I/usr/include/ncurses $RPM_OPT_FLAGS"
-export CPPFLAGS LDFLAGS CFLAGS
 %configure \
+	--enable-nls \
 	--enable-color \
 	--with-ncurses \
-	--with-nov-dir=/var/spool/news \
-	--with-spooldir=/var/spool/news \
+	--with-nov-dir=%{_var}/spool/news \
+	--with-spooldir=%{_var}/spool/news \
 	--enable-locale \
+	--with-gpg=%{_bindir}/gpg \
+	--with-mailer=%{_sbindir}/sendmail \
+	--enable-ipv6 \
 	--disable-debug
 
 %{__make} -C src
@@ -80,24 +80,21 @@ rm -rf $RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT/{etc,%{_bindir},%{_mandir}/man1}
 
-install src/tin $RPM_BUILD_ROOT%{_bindir}
-ln -sf tin $RPM_BUILD_ROOT%{_bindir}/rtin
+%{__make} \
+	DESTDIR=$RPM_BUILD_ROOT \
+	install
 
-install doc/tin.1 $RPM_BUILD_ROOT%{_mandir}/man1
-install doc/tin.defaults $RPM_BUILD_ROOT%{_sysconfdir}
+install doc/tin.defaults	$RPM_BUILD_ROOT%{_sysconfdir}
+echo ".so tin.1"	>	$RPM_BUILD_ROOT%{_mandir}/man1/rtin.1
 
-echo ".so tin.1" > $RPM_BUILD_ROOT%{_mandir}/man1/rtin.1
-
-gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/* \
-	{README,MANIFEST,doc/{CHANGES,TODO,DEBUG_REFS,WHATSNEW,*.txt}}
+%find_lang %{name}
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+#rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc {README,MANIFEST,doc/{CHANGES,TODO,DEBUG_REFS,WHATSNEW,*.txt}}.gz
+%doc README MANIFEST doc/{CHANGES,TODO,DEBUG_REFS,WHATSNEW,*.txt}
 %verify(not md5 mtime size) %config(noreplace) %{_sysconfdir}/tin.defaults
 %attr(755,root,root) %{_bindir}/*
-
-%{_mandir}/man1/*
+%{_mandir}/man*/*
