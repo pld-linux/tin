@@ -5,15 +5,15 @@ Summary(pl):	tin - czytnik newsów
 Summary(tr):	Haber okuyucu
 Name:		tin
 Version:	1.4.0
-Release:	1
+Release:	2
 Serial:		2
 Copyright:	distributable
 Group:		Applications/News
 Group(pl):	Aplikacje/News
 Source:		ftp://ftp.tin.org/pub/news/clients/tin/current/%{name}-%{version}.tar.bz2
 URL:		http://www.tin.org/
-BuildRequires:	ncurses-devel
-Requires:	ncurses => 4.2-12
+BuildRequires:	ncurses-devel >= 5.0
+Requires:	ncurses => 5.0
 BuildRoot:	/tmp/%{name}-%{version}-root
 
 %description
