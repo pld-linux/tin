@@ -1,4 +1,4 @@
-%define date 19990413
+%define date 19990517
 Summary:	tin News Reader
 Summary(de):	tin News-Reader
 Summary(fr):	Lecteur de news tin.
@@ -56,7 +56,7 @@ arac�l�蹥yla uzaktan ('rtin' ya da 'tin -r' se蔒ne簨 ile) okuyabilir.
 %build
 CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
 ./configure %{_target} \
-	--prefix=/usr \
+	--prefix=%{_prefix} \
 	--enable-color \
 	--with-ncurses \
 	--with-nov-dir=/var/spool/news \
@@ -96,83 +96,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/*
 
 %changelog
-* Fri May 14 1999 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
-  [1.4pre19990413-2]
-- now package is FHS 2.0 compliant.
-
-* Tue Feb 23 1999 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
-  [1.4pre19990216-1]
-- removed man group from man pages,
-- Serial changed to 1,
-- added bzipping2 %doc.
-
-* Sun Dec 27 1998 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
-  [1.4pre981225-1]
-- added gzipping man pages,
-- added using LDFLAGS="-s" to ./configure enviroment.
-
-* Thu Jul 30 1998 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
-  [1.4pre980730-1]
-- fixed %verify (not size) on /etc/tin.defaults,
-- changed passing $RPM_OPT_FLAGS contents,
-- added translation for de, fr, tr (from orginam RH 5.1 spec),
-- added pl translation,
-- locale support added (counfigure is now called with --enalbe-locale),
-- added ULR,
-- changet Source URL to ftp.tin.org.
-
-* Mon Jun  1 1998 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
-  [1.4pre980514-2]
-- built against ncurses 4.2 (for RH 5.1).
-
-* Fri May 15 1998 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
-  [1.4pre980514-1]
-- added Serial field which will be calculated as: <major_ver> * 10^9 +
-  <minor_ver> + 10^7 + <date>. Current for 1.4pre980514 is
-  104980514. <date> = 999999 is reserved for finan version.
-  Serial number is added because previouse version released in regular
-  distribution have version 1.22 (real version is 1.2pl2)
-  This allow slight upgrade to 1.4pre from 1.22,
-- added -q %setup parameter,
-- added %%{date} macro,
-- added using %%{name} macro in Buildroot,
-- added %clean section,
-- added /etc/tin.defaults %config file,
-- tin now is builded from tar.bz2 file,
-- added %defattr and %attr macro in %files (require rpm >= 2.4.109).
-
-* Mon Mar 30 1998 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
-  [1.4pre980226-1]
-- added CFLAGS="$RPM_OPT_FLAGS" as a make parameter,
-- removed Packager field (if you want recompile and redisstrubute this stuff    
-  put this field in your own ~/.rpmrc).
-
-* Wed Jan 14 1998 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
-  [1.4pre980105]
-- added rtin(1) man page,
-- rtin now it is sym link to tin,
-- added --disable-debug to configure parameters.
- 
-* Tue Nov  4 1997 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
-  [1.4pre971102]
-- added %%{PACKAGE_VERSION} in Buildroot,
-- added all doc/*.txt docs.
-
-* Fri Sep 12 1997 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
-  [1.3beta970911]
-- changed %attr in %doc,
-
-* Fri Aug 22 1997 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
-- added %descripion.
-
-* Mon Jul 21 1997 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
-- added %attr to all %doc (allows build package from non root account),
-
-* Fri Jul 18 1997 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
-- added macro %version,
-- added macros %attr in files,
-
-* Mon Jun 16 1997 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
-- changed nov-dir and spooldir (configure) to /var/spool/news,
-- added Prefix field (packake now is relocatable),
-- changed %install section.
+* Mon May 31 1999 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
+  [1.4pre19990517-1]
+- based on my old spec for tin,
+- spec rewrited by PLD team.
