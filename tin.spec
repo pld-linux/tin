@@ -5,7 +5,7 @@ Summary(pl):	tin - czytnik newsów
 Summary(tr):	Haber okuyucu
 Name:		tin
 Version:	1.4.0
-Release:	2
+Release:	3
 Serial:		2
 Copyright:	distributable
 Group:		Applications/News
@@ -52,6 +52,7 @@ aracýlýðýyla uzaktan ('rtin' ya da 'tin -r' seçeneði ile) okuyabilir.
 %setup -q
 
 %build
+CPPFLAGS="-DINET6"; export CPPFLAGS
 %configure \
 	--enable-color \
 	--with-ncurses \
