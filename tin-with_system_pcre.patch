@@ -1,12 +1,12 @@
-diff -Nru tin-1.5.4.orig/src/Makefile.in tin-1.5.4/src/Makefile.in
---- tin-1.5.4.orig/src/Makefile.in	Thu May 25 22:43:18 2000
-+++ tin-1.5.4/src/Makefile.in	Thu May 25 22:45:18 2000
+diff -uNr tin-1.5.6.orig/src/Makefile.in tin-1.5.6/src/Makefile.in
+--- tin-1.5.6.orig/src/Makefile.in	Thu Aug  3 15:41:43 2000
++++ tin-1.5.6/src/Makefile.in	Fri Aug 18 03:24:59 2000
 @@ -50,7 +50,7 @@
  
  DEBUG	= @ENABLE_DEBUG@ -DDEBUG #-DDEBUG_NEWSRC -DPROFILE -DDEBUG_REFS
  CANLOCK = # -DUSE_CANLOCK # -DEVIL_INSIDE
--CPPOPTS	= @DEFS@ -I. -I../include -I$(top_srcdir)/pcre -DLOCALEDIR=\"$(prefix)/@DATADIRNAME@/locale\" -I$(INCDIR) $(DEBUG) $(CANLOCK) @CPPFLAGS@
-+CPPOPTS	= @DEFS@ -I. -I../include -DLOCALEDIR=\"$(prefix)/@DATADIRNAME@/locale\" -I$(INCDIR) $(DEBUG) $(CANLOCK) @CPPFLAGS@
+-CPPOPTS	= @DEFS@ -I. -I../include -I$(top_builddir)/pcre -I$(top_srcdir)/pcre -DLOCALEDIR=\"$(prefix)/@DATADIRNAME@/locale\" -I$(INCDIR) $(DEBUG) $(CANLOCK) @CPPFLAGS@
++CPPOPTS = @DEFS@ -I. -I../include -DLOCALEDIR=\"$(prefix)/@DATADIRNAME@/
  CFLAGS	= @CFLAGS@
  
  LD	= $(CC)
@@ -19,7 +19,7 @@ diff -Nru tin-1.5.4.orig/src/Makefile.in tin-1.5.4/src/Makefile.in
  
  # Where do you want the binary & manual page installed?
  DESTDIR	= @DESTDIR@
-@@ -177,7 +177,7 @@
+@@ -178,7 +178,7 @@
  
  EXTRAOBJS = @EXTRAOBJS@
  
@@ -28,7 +28,7 @@ diff -Nru tin-1.5.4.orig/src/Makefile.in tin-1.5.4/src/Makefile.in
  
  OFILES	= @ALLOCA@ $(EXTRAOBJS) \
  	$(OBJDIR)/active.o \
-@@ -315,7 +315,7 @@
+@@ -380,7 +380,7 @@
  
  cflow:
  	@$(ECHO) "Creating cflow for $(PROJECT)..."
@@ -37,7 +37,7 @@ diff -Nru tin-1.5.4.orig/src/Makefile.in tin-1.5.4/src/Makefile.in
  
  cscope:
  	@$(ECHO) "Creating cscope database $(PROJECT)..."
-@@ -334,10 +334,6 @@
+@@ -399,10 +399,6 @@
  	$(INCDIR)/nntplib.h \
  	$(INCDIR)/proto.h
  
@@ -46,5 +46,5 @@ diff -Nru tin-1.5.4.orig/src/Makefile.in tin-1.5.4/src/Makefile.in
 -	@$(ECHO) "Building Philip Hazel's Perl regular expressions library..."
 -	@$(CD) ../pcre && $(MAKE) @cf_cv_makeflags@ $(PRELIB)pcre.a
  
- tincfg.h:			$(SRCDIR)/tincfg.tbl \
- 				makecfg$x
+ @INTLDIR_MAKE@@INTLLIBS@:
+ @INTLDIR_MAKE@	@$(ECHO) "Building GNU gettext library..."
