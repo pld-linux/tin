@@ -4,13 +4,13 @@ Summary(fr):	Lecteur de news tin
 Summary(pl):	tin - czytnik newsów
 Summary(tr):	Haber okuyucu
 Name:		tin
-Version:	1.4.3
-Release:	2
+Version:	1.5.4
+Release:	1
 Serial:		2
 Copyright:	distributable
 Group:		Applications/News
 Group(pl):	Aplikacje/News
-Source0:	ftp://ftp.tin.org/pub/news/clients/tin/current/%{name}-%{version}.tar.bz2
+Source0:		ftp://ftp.tin.org/pub/news/clients/tin/unstable/%{name}-%{version}.tar.bz2
 Patch0:		tin-enable_coloring.patch
 Patch1:		tin-with_system_pcre.patch
 URL:		http://www.tin.org/
