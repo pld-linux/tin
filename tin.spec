@@ -13,6 +13,7 @@ Group(pl):	Aplikacje/News
 Source0:	ftp://ftp.tin.org/pub/news/clients/tin/unstable/%{name}-%{version}.tar.bz2
 Patch0:		tin-enable_coloring.patch
 Patch1:		tin-with_system_pcre.patch
+#Patch2:	tin-old-style.patch
 URL:		http://www.tin.org/
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	pcre-devel
@@ -57,6 +58,7 @@ okuyabilir.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+#%patch2 -p2
 
 %build
 CPPFLAGS="-DINET6"
