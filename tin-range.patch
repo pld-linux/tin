@@ -1,0 +1,12 @@
+diff -urN tin-1.5.7.org/src/newsrc.c tin-1.5.7/src/newsrc.c
+--- tin-1.5.7.org/src/newsrc.c	Mon Nov  6 01:47:02 2000
++++ tin-1.5.7/src/newsrc.c	Mon Nov  6 01:48:04 2000
+@@ -894,7 +894,7 @@
+ 	struct t_group *group)
+ {
+ 	long artnum;
+-	long i, last;
++	unsigned long long i, last;
+ 	t_bool flag = FALSE;
+ 
+ #ifdef DEBUG_NEWSRC
