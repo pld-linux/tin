@@ -1,4 +1,4 @@
-%define date 981114
+%define date 981225
 Summary:     tin News Reader
 Summary(de): tin News-Reader
 Summary(fr): Lecteur de news tin.
@@ -51,7 +51,7 @@ aracýlýðýyla uzaktan ('rtin' ya da 'tin -r' seçeneði ile) okuyabilir.
 %setup -q -n tin-%{date}
 
 %build
-CFLAGS="$RPM_OPT_FLAGS" \
+CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
 ./configure --prefix=/usr \
 	--enable-color \
 	--with-ncurses \
@@ -75,6 +75,8 @@ install doc/tin.defaults $RPM_BUILD_ROOT/etc
 
 echo ".so tin.1" > $RPM_BUILD_ROOT/usr/man/man1/rtin.1
 
+gzip -9nf $RPM_BUILD_ROOT/usr/man/man1/*
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -86,6 +88,11 @@ rm -rf $RPM_BUILD_ROOT
 %attr(644, root,  man) /usr/man/man1/*
 
 %changelog
+* Sun Dec 27 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [1.4pre981225-1]
+- added gzipping man pages,
+- added using LDFLAGS="-s" to ./configure enviroment.
+
 * Thu Jul 30 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [1.4pre980730-1]
 - fixed %verify (not size) on /etc/tin.defaults,
