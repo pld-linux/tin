@@ -1,17 +1,16 @@
-%define date 19990927
 Summary:	tin News Reader
 Summary(de):	tin News-Reader
 Summary(fr):	Lecteur de news tin.
 Summary(pl):	tin - czytnik newsów
 Summary(tr):	Haber okuyucu
 Name:		tin
-Version:	1.4pre%{date}
+Version:	1.4.0
 Release:	1
-Serial:		1
+Serial:		2
 Copyright:	distributable
 Group:		Applications/News
 Group(pl):	Aplikacje/News
-Source:		ftp://ftp.tin.org/pub/news/clients/tin/current/tinpre-1.4-%{date}.tar.bz2
+Source:		ftp://ftp.tin.org/pub/news/clients/tin/current/%{name}-%{version}.tar.bz2
 URL:		http://www.tin.org/
 BuildRequires:	ncurses-devel
 Requires:	ncurses => 4.2-12
@@ -50,7 +49,7 @@ Haberleri yerel olarak (/usr/spool/news), ya da bir NNTP sunucusu
 aracýlýðýyla uzaktan ('rtin' ya da 'tin -r' seçeneði ile) okuyabilir.
 
 %prep
-%setup -q -n tin-%{date}
+%setup -q
 
 %build
 %configure \
