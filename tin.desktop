@@ -5,3 +5,4 @@ Comment=Tin - A Usenet newsreader
 Comment=Tin - czytnik newsów 
 Exec=rtin
 Terminal=1
+# vi: encoding=utf-8
