@@ -61,7 +61,8 @@ okuyabilir.
 %build
 CPPFLAGS="-DINET6"
 LDFLAGS="-s"
-export CPPFLAGS LDFLAGS
+CFLAGS="-I/usr/include/ncurses $RPM_OPT_FLAGS"
+export CPPFLAGS LDFLAGS CFLAGS
 %configure \
 	--enable-color \
 	--with-ncurses \
