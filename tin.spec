@@ -53,7 +53,6 @@ aracýlýðýyla uzaktan ('rtin' ya da 'tin -r' seçeneði ile) okuyabilir.
 %setup -q -n tin-%{date}
 
 %build
-autoconf
 %configure \
 	--enable-color \
 	--with-ncurses \
