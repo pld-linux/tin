@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Tin
+Type=Application
+Comment=Tin - A Usenet newsreader
+Comment=Tin - czytnik newsów 
+Exec=rtin
+Terminal=1
