@@ -12,6 +12,7 @@ Copyright:	distributable
 Group:		Applications/News
 Group(pl):	Aplikacje/News
 Source:		ftp://ftp.tin.org/pub/news/clients/tin/current/tinpre-1.4-%{date}.tar.bz2
+Patch:		http://www.misiek.eu.org/ipv6/tin-ipv6-23081999.patch.gz
 URL:		http://www.tin.org/
 BuildRequires:	ncurses-devel
 Requires:	ncurses => 4.2-12
@@ -52,9 +53,10 @@ aracýlýðýyla uzaktan ('rtin' ya da 'tin -r' seçeneði ile) okuyabilir.
 
 %prep
 %setup -q -n tin-%{date}
+%patch -p1
 
 %build
-CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
+autoconf
 %configure \
 	--enable-color \
 	--with-ncurses \
