@@ -13,6 +13,7 @@ Source0:	ftp://ftp.tin.org/pub/news/clients/tin/unstable/snapshots/%{name}-%{ver
 Patch0:		tin-enable_coloring.patch
 Patch1:		tin-with_system_pcre.patch
 Patch2:		tin-ncurses.patch
+Patch3:		tin-range.patch
 URL:		http://www.tin.org/
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	pcre-devel
@@ -59,6 +60,7 @@ okuyabilir.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 %build
 %configure \
