@@ -89,12 +89,12 @@ LDFLAGS="%{rpmldflags} -lpcre"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/{etc,%{_bindir},%{_mandir}/man1,%{_mandir}/man5,%{_applnkdir}/Network/News}
+install -d $RPM_BUILD_ROOT/{etc,etc/tin,%{_bindir},%{_mandir}/man1,%{_mandir}/man5,%{_applnkdir}/Network/News}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-%{__install} doc/tin.defaults $RPM_BUILD_ROOT%{_sysconfdir}
+%{__install} doc/tin.defaults $RPM_BUILD_ROOT%{_sysconfdir}/tin
 echo ".so tin.1" > $RPM_BUILD_ROOT%{_mandir}/man1/rtin.1
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Network/News
@@ -111,7 +111,7 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc *.gz doc/*.gz
-%verify(not md5 mtime size) %config(noreplace) %{_sysconfdir}/tin.defaults
+%verify(not md5 mtime size) %config(noreplace) %{_sysconfdir}/tin/tin.defaults
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man*/*
 %{_applnkdir}/Network/News/*
