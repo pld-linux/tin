@@ -2,7 +2,9 @@ Summary:	tin News Reader
 Summary(de):	tin News-Reader
 Summary(fr):	Lecteur de news tin
 Summary(pl):	tin - czytnik newsСw
+Summary(ru):	tin - программа для чтения телеконференций Usenet
 Summary(tr):	Haber okuyucu
+Summary(uk):	tin - програма для читання телеконференц╕й Usenet
 Name:		tin
 Version:	1.5.13
 Release:	1
@@ -50,11 +52,23 @@ z lokalnych zasobСw (np. z katalogu /var/spool/news jak i ze zdalnych
 (uruchamiaj╠c 'rtin' lub 'tin -r') serwerСw NNTP (Network News
 Transport Protocol).
 
+%description -l ru
+Tin - это простая в использовании полноэкранная программа для чтения
+телеконференций Usenet. Она может читать телеконференции с локальной
+(т.е. /var/spool/news) или удаленной (rtin или опция tin -r) по NNTP
+(Network News Transport Protocol).
+
 %description -l tr
 Tin, metin ekranda ГalЩЧan kolay kullanЩlЩr bir USENET haber
 okuyucusudur. Haberleri yerel olarak (/usr/spool/news), ya da bir NNTP
 sunucusu aracЩlЩПЩyla uzaktan ('rtin' ya da 'tin -r' seГeneПi ile)
 okuyabilir.
+
+%description -l uk
+Tin - це проста у використанн╕ повноекранна програма для читання
+телеконференц╕й Usenet. Вона дозволя╓ читати телеконференц╕╖ як з
+локально╖ машини (тобто /var/spool/news) так ╕ з в╕ддалено╖ (rtin або
+опц╕я tin -r) по NNTP (Network News Transport Protocol).
 
 %prep
 %setup -q
