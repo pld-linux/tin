@@ -1,0 +1,12 @@
+diff -uNr tin-1.5.9/include/menukeys.h tin-1.5.9.new/include/menukeys.h
+--- tin-1.5.9/include/menukeys.h	Wed May  2 09:54:36 2001
++++ tin-1.5.9.new/include/menukeys.h	Mon Jul  2 18:41:27 2001
+@@ -264,7 +264,7 @@
+ #ifdef HAVE_PGP_GPG
+ #	define iKeyPagePGPCheckArticle ctrl('G')
+ #endif /* HAVE_PGP_GPG */
+-#define iKeyPageToggleHeaders ctrl('H')
++#define iKeyPageToggleHeaders '\177'
+ #define iKeyPageNextUnread '\t'
+ #define iKeyPageNextThd '\n'
+ #define iKeyPageAutoKill ctrl('K')
