@@ -1,3 +1,4 @@
+# $Id$
 # Group attributes file for the TIN newsreader
 #
 #  scope=STRING (ie. alt.sources or *sources*) [mandatory]
