@@ -1,0 +1,87 @@
+# Group attributes file for the TIN newsreader
+#
+#  scope=STRING (ie. alt.sources or *sources*) [mandatory]
+#
+#  maildir=STRING (ie. ~/Mail)
+#  savedir=STRING (ie. ~user/News)
+#  savefile=STRING (ie. =linux)
+#  organization=STRING (if beginning with '/' read from file)
+#  from=STRING (just append wanted From:-line, don't use quotes)
+#  sigfile=STRING (ie. $var/sig)
+#  followup_to=STRING
+#  printer=STRING
+#  auto_select=ON/OFF
+#  auto_save=ON/OFF
+#  auto_save_msg=ON/OFF
+#  batch_save=ON/OFF
+#  delete_tmp_files=ON/OFF
+#  show_only_unread=ON/OFF
+#
+#  thread_arts=NUM
+#    0=none, 1=subj, 2=refs, 3=both
+#
+#  show_author=NUM
+#    0=none, 1=name, 2=addr, 3=both
+#
+#  sort_art_type=NUM
+#    0=none, 1=subj descend, 2=subj ascend,
+#    3=from descend, 4=from ascend,
+#    5=date descend, 6=date ascend
+#
+#    7=score descend, 8=score ascend
+#
+#  post_proc_type=NUM
+#    0=none, 1=unshar, 2=uudecode,
+#    3=uudecode & list zoo archive,
+#    4=uudecode & extract zoo archive
+#    5=uudecode & list zip archive,
+#    6=uudecode & extract zip archive
+#
+#  mailing_list=STRING (ie. majordomo@list.org)
+#  x_headers=STRING (ie. ~/.tin/extra-headers)
+#  x_body=STRING (ie. ~/.tin/extra-body-text)
+#  quick_kill_scope  = STRING (ie. talk.*)
+#  quick_kill_expire = ON/OFF
+#  quick_kill_case   = ON/OFF
+#  quick_kill_header = NUM
+#    0=subj (case sensitive) 1=subj (ignore case)
+#    2=from (case sensitive) 3=from (ignore case)
+#    4=msgid 5=lines
+#
+#  quick_select_scope  = STRING
+#  quick_select_expire = ON/OFF
+#  quick_select_case   = ON/OFF
+#  quick_select_header = NUM
+#    0=subj (case sensitive) 1=subj (ignore case)
+#    2=from (case sensitive) 3=from (ignore case)
+#    4=msgid 5=lines
+#
+#  x_comment_to=ON/OFF
+#  news_quote_format=STRING
+#
+#  quote_chars=STRING (%s, %S for initials)
+#
+# Note that it is best to put general (global scoping)
+# entries first followed by group specific entries.
+#
+############################################################################
+
+# in *sources* set post process type to shar
+scope=*sources*
+post_proc_type=1
+
+scope=*
+x_headers=~/.tin/headers
+
+# in *binaries* set post process type to uudecode, remove tmp files
+# and set Followup-To: poster
+scope=*binaries*
+post_proc_type=2
+delete_tmp_files=ON
+followup_to=poster
+scope=*,!pl.*
+undeclared_charset=ISO-8859-1
+
+scope=pl.*
+undeclared_charset=ISO-8859-2
+
