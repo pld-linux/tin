@@ -17,7 +17,6 @@ Patch0:		%{name}-enable_coloring.patch
 #Patch1:		%{name}-with_system_pcre.patch
 Patch2:		%{name}-ncurses.patch
 Patch3:		%{name}-range.patch
-Patch4:		%{name}-ctrl-h.patch
 URL:		http://www.tin.org/
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	pcre-devel
@@ -64,7 +63,6 @@ okuyabilir.
 #%patch1 -p1
 %patch2 -p1
 %patch3 -p1
-%patch4 -p1
 
 %build
 %configure2_13 \
