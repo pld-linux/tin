@@ -12,7 +12,7 @@ Summary(tr):	Haber okuyucu
 Summary(uk):	tin - програма для читання телеконференц╕й Usenet
 Name:		tin
 Version:	1.7.5
-Release:	1
+Release:	2
 Epoch:		5
 License:	distributable
 Group:		Applications/News
@@ -108,7 +108,7 @@ LDFLAGS="%{rpmldflags} -lpcre"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/{etc,etc/tin,%{_bindir},%{_mandir}/man1,%{_mandir}/man5,%{_applnkdir}/Network/News}
+install -d $RPM_BUILD_ROOT/{etc,etc/tin,%{_bindir},%{_mandir}/man1,%{_mandir}/man5,%{_desktopdir}}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
@@ -118,7 +118,7 @@ install %{SOURCE2} $RPM_BUILD_ROOT%{_sysconfdir}/tin/attributes
 rm -f $RPM_BUILD_ROOT%{_mandir}/man1/rtin.1
 echo ".so tin.1" > $RPM_BUILD_ROOT%{_mandir}/man1/rtin.1
 
-install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Network/News
+install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 
 rm -f $RPM_BUILD_ROOT%{_bindir}/url_handler.sh
 
@@ -136,4 +136,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/*
 %{_mandir}/man5/tin.5*
 %{_mandir}/man5/mmdf*
-%{_applnkdir}/Network/News/*
+%{_desktopdir}/*
