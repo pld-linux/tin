@@ -2,7 +2,7 @@
 Name=Tin
 Type=Application
 Comment=Tin - A Usenet newsreader
-Comment=Tin - czytnik newsów 
+Comment[pl]=Tin - czytnik newsÃ³w 
 Exec=rtin
 Terminal=1
 # vi: encoding=utf-8
