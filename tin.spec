@@ -141,7 +141,7 @@ rm -rf $RPM_BUILD_ROOT
 - added %descripion.
 
 * Mon Jul 21 1997 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
-- added %attr to all %doc (allow build package from non root account),
+- added %attr to all %doc (allows build package from non root account),
 
 * Fri Jul 18 1997 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
 - added macro %version,
