@@ -8,12 +8,13 @@ Version:	1.5.7
 Release:	1
 Copyright:	distributable
 Group:		Applications/News
+Group(de):	Applikationen/News
 Group(pl):	Aplikacje/News
 Source0:	ftp://ftp.tin.org/pub/news/clients/tin/unstable/snapshots/%{name}-%{version}.tar.bz2
-Patch0:		tin-enable_coloring.patch
-Patch1:		tin-with_system_pcre.patch
-Patch2:		tin-ncurses.patch
-Patch3:		tin-range.patch
+Patch0:		%{name}-enable_coloring.patch
+Patch1:		%{name}-with_system_pcre.patch
+Patch2:		%{name}-ncurses.patch
+Patch3:		%{name}-range.patch
 URL:		http://www.tin.org/
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	pcre-devel
@@ -79,24 +80,24 @@ okuyabilir.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 install -d $RPM_BUILD_ROOT/{etc,%{_bindir},%{_mandir}/man1}
 
-%{__make} \
-	DESTDIR=$RPM_BUILD_ROOT \
-	install
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
-install doc/tin.defaults	$RPM_BUILD_ROOT%{_sysconfdir}
-echo ".so tin.1"	>	$RPM_BUILD_ROOT%{_mandir}/man1/rtin.1
+install doc/tin.defaults $RPM_BUILD_ROOT%{_sysconfdir}
+echo ".so tin.1" > $RPM_BUILD_ROOT%{_mandir}/man1/rtin.1
 
 %find_lang %{name}
 
+gzip -9nf README MANIFEST doc/{CHANGES,TODO,DEBUG_REFS,WHATSNEW,*.txt}
+
 %clean
-#rm -rf $RPM_BUILD_ROOT
+rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc README MANIFEST doc/{CHANGES,TODO,DEBUG_REFS,WHATSNEW,*.txt}
+%doc *.gz doc/*.gz
 %verify(not md5 mtime size) %config(noreplace) %{_sysconfdir}/tin.defaults
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man*/*
