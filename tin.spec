@@ -7,7 +7,7 @@ Summary(tr):	Haber okuyucu
 Name:		tin
 Version:	1.4pre%{date}
 Release:	1
-Serial:		104%{date}
+Serial:		1
 Copyright:	distributable
 Group:		Applications/News
 Source:		ftp://ftp.tin.org/pub/news/clients/tin/current/tinpre-1.4-%{date}.tar.bz2
@@ -77,7 +77,7 @@ install doc/tin.defaults $RPM_BUILD_ROOT/etc
 echo ".so tin.1" > $RPM_BUILD_ROOT/usr/man/man1/rtin.1
 
 gzip -9nf $RPM_BUILD_ROOT/usr/man/man1/*
-bzip -9 {README,MANIFEST,doc/{CHANGES,TODO,DEBUG_REFS,WHATSNEW,*.txt}}
+bzip2 -9 {README,MANIFEST,doc/{CHANGES,TODO,DEBUG_REFS,WHATSNEW,*.txt}}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -96,6 +96,7 @@ rm -rf $RPM_BUILD_ROOT
 * Tue Feb 23 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [1.4pre19990216-1]
 - removed man group from man pages,
+- Serial changed to 1,
 - added bzipping2 %doc.
 
 * Sun Dec 27 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
