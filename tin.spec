@@ -6,7 +6,7 @@ Summary(pl):	tin - czytnik newsów
 Summary(tr):	Haber okuyucu
 Name:		tin
 Version:	1.4pre%{date}
-Release:	1
+Release:	2
 Serial:		1
 Copyright:	distributable
 Group:		Applications/News
@@ -74,10 +74,10 @@ install -d $RPM_BUILD_ROOT/{etc,usr/{bin,man/man1}}
 install -s src/tin $RPM_BUILD_ROOT/usr/bin
 ln -sf tin $RPM_BUILD_ROOT/usr/bin/rtin
 
-install doc/tin.1 $RPM_BUILD_ROOT/usr/man/man1
+install doc/tin.1 $RPM_BUILD_ROOT/usr/share/man/man1
 install doc/tin.defaults $RPM_BUILD_ROOT/etc
 
-echo ".so tin.1" > $RPM_BUILD_ROOT/usr/man/man1/rtin.1
+echo ".so tin.1" > $RPM_BUILD_ROOT/usr/share/man/man1/rtin.1
 
 gzip -9nf $RPM_BUILD_ROOT/usr/man/man1/* \
 	{README,MANIFEST,doc/{CHANGES,TODO,DEBUG_REFS,WHATSNEW,*.txt}}
@@ -93,9 +93,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %attr(755,root,root) /usr/bin/*
 
-/usr/man/man1/*
+/usr/share/man/man1/*
 
 %changelog
+* Fri May 14 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [1.4pre19990413-2]
+- now package is FHS 2.0 compliat.
+
 * Tue Feb 23 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [1.4pre19990216-1]
 - removed man group from man pages,
