@@ -74,12 +74,12 @@ install -d $RPM_BUILD_ROOT/{etc,usr/{bin,share/man/man1}}
 install -s src/tin $RPM_BUILD_ROOT/usr/bin
 ln -sf tin $RPM_BUILD_ROOT/usr/bin/rtin
 
-install doc/tin.1 $RPM_BUILD_ROOT/usr/share/man/man1
+install doc/tin.1 $RPM_BUILD_ROOT%{_mandir}/man1
 install doc/tin.defaults $RPM_BUILD_ROOT/etc
 
-echo ".so tin.1" > $RPM_BUILD_ROOT/usr/share/man/man1/rtin.1
+echo ".so tin.1" > $RPM_BUILD_ROOT%{_mandir}/man1/rtin.1
 
-gzip -9nf $RPM_BUILD_ROOT/usr/share/man/man1/* \
+gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/* \
 	{README,MANIFEST,doc/{CHANGES,TODO,DEBUG_REFS,WHATSNEW,*.txt}}
 
 %clean
@@ -93,7 +93,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %attr(755,root,root) /usr/bin/*
 
-/usr/share/man/man1/*
+%{_mandir}/man1/*
 
 %changelog
 * Fri May 14 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
