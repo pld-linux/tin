@@ -13,7 +13,7 @@ Group:		Applications/News
 Group(pl):	Aplikacje/News
 Source:		ftp://ftp.tin.org/pub/news/clients/tin/current/tinpre-1.4-%{date}.tar.bz2
 URL:		http://www.tin.org/
-BuildPrereq:	ncurses-devel
+BuildRequires:	ncurses-devel
 Requires:	ncurses => 4.2-12
 BuildRoot:	/tmp/%{name}-%{version}-root
 
