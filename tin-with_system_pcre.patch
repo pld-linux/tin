@@ -1,0 +1,50 @@
+diff -Nru tin-1.4.3/src/Makefile.in tin-1.4.3.new/src/Makefile.in
+--- tin-1.4.3/src/Makefile.in	Thu Sep 16 16:25:22 1999
++++ tin-1.4.3.new/src/Makefile.in	Thu May  4 03:01:50 2000
+@@ -20,7 +20,7 @@
+ DEBUG	= @ENABLE_DEBUG@ -DDEBUG #-DDEBUG_NEWSRC -DPROFILE -DDEBUG_REFS
+ DAEMON	= # -DINDEX_DAEMON
+ CANLOCK = # -DUSE_CANLOCK # -DEVIL_INSIDE
+-CPPOPTS	= @DEFS@ -I. -I../include -I$(top_srcdir)/pcre -I$(INCDIR) $(DEBUG) $(DAEMON) $(CANLOCK) @CPPFLAGS@
++CPPOPTS	= @DEFS@ -I. -I../include -I$(INCDIR) $(DEBUG) $(DAEMON) $(CANLOCK) @CPPFLAGS@
+ CFLAGS	= @CFLAGS@
+ 
+ LD	= $(CC)
+@@ -28,7 +28,7 @@
+ YACC	= @YACC@
+ 
+ CANLIB	= # -L../libcanlock -lcanlock
+-LIBS	= -L../pcre -lpcre $(CANLIB) @LIBS@ @INN_NNTPLIB@
++LIBS	= -lpcre $(CANLIB) @LIBS@ @INN_NNTPLIB@
+ 
+ # Where do you want the binary & manual page installed?
+ INSTALL_PREFIX	= @INSTALL_PREFIX@
+@@ -138,7 +138,7 @@
+ 
+ EXTRAOBJS = @EXTRAOBJS@
+ 
+-EXTRALIBS = ../pcre/$(PRELIB)pcre.a
++EXTRALIBS = 
+ 
+ OFILES	= @ALLOCA@ $(EXTRAOBJS) \
+ 	$(OBJDIR)/active.o \
+@@ -315,7 +315,7 @@
+ 
+ cflow:
+ 	@$(ECHO) "Creating cflow for $(PROJECT)..."
+-	@$(CFLOW) -I$(INCDIR) -I$(SRCDIR) -I../pcre $(CFILES) > cflow.$(PROJECT)
++	@$(CFLOW) -I$(INCDIR) -I$(SRCDIR) $(CFILES) > cflow.$(PROJECT)
+ 
+ cscope:
+ 	@$(ECHO) "Creating cscope database $(PROJECT)..."
+@@ -334,10 +334,6 @@
+ 	$(INCDIR)/nntplib.h \
+ 	$(INCDIR)/proto.h
+ 
+-
+-../pcre/$(PRELIB)pcre.a:
+-	@$(ECHO) "Building Philip Hazel's Perl regular expressions library..."
+-	@$(CD) ../pcre && $(MAKE) @cf_cv_makeflags@ $(PRELIB)pcre.a
+ 
+ tincfg.h:			$(SRCDIR)/tincfg.tbl \
+ 				makecfg$x
