@@ -25,7 +25,6 @@ Patch1:		%{name}-ncurses.patch
 Patch2:		%{name}-range.patch
 Patch3:		%{name}-charset.patch
 URL:		http://www.tin.org/
-BuildRequires:	metamail
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	pcre-devel
 Requires:	urlview
@@ -87,20 +86,22 @@ Tin - це проста у використанн╕ повноекранна програма для читання
 %build
 LDFLAGS="%{rpmldflags} -lpcre"
 %configure2_13 \
-	--enable-nls \
-	--enable-color \
-	--disable-mime-strict-charset \
-	--with-pcre \
-	--with-ncurses \
-	--enable-curses \
-	--with-screen=ncurses \
-	--with-nov-dir=%{_var}/spool/news \
-	--with-spooldir=%{_var}/spool/news \
-	--disable-locale \
-	--with-gpg=%{_bindir}/gpg \
-	--with-mailer=%{_libdir}/sendmail \
-	--enable-ipv6 \
 	--disable-debug \
+	--disable-locale \
+	--disable-mime-strict-charset \
+	--enable-color \
+	--enable-curses \
+	--enable-ipv6 \
+	--enable-nls \
+	--with-gpg=/usr/bin/gpg \
+	--with-ispell=/usr/bin/ispell \
+	--with-mailer=/usr/lib/sendmail \
+	--with-metamail=/usr/bin/metamail \
+	--with-ncurses \
+	--with-nov-dir=%{_var}/spool/news \
+	--with-pcre \
+	--with-screen=ncurses \
+	--with-spooldir=%{_var}/spool/news \
 	%{?domain_name:--with-domain-name=%{domain_name}} \
 	%{?default_server:--with-nntp-default-server=%{default_server}}
 
