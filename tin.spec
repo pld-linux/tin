@@ -5,8 +5,9 @@ Summary(pl):	tin - czytnik newsów
 Summary(tr):	Haber okuyucu
 Name:		tin
 Version:	1.5.7
-Release:	1
-Copyright:	distributable
+Release:	2
+Epoch:		2
+License:	distributable
 Group:		Applications/News
 Group(de):	Applikationen/News
 Group(pl):	Aplikacje/News
@@ -41,8 +42,7 @@ einen NNTP-Server (Network News Transport Protocol) eingesetzt werden.
 %description -l fr
 Tin est un lecteur de news plein écran facile à utiliser. Il peut lire
 des articles localement (i.e. /usr/spool/news) ou à distance ('rtin'
-ou 'tin
-- -r') via un serveur NNTP (Network News Transport Protocol).
+ou 'tin -r') via un serveur NNTP (Network News Transport Protocol).
 
 %description -l pl
 Tin jest pe³noekranowym czytnikiem newsów. Umo¿liwia czytanie zarówno
