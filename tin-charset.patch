@@ -1,16 +1,19 @@
 diff -urN tin-1.5.11.org/doc/tin.defaults tin-1.5.11/doc/tin.defaults
 --- tin-1.5.11.org/doc/tin.defaults	Mon Dec  3 16:46:26 2001
-+++ tin-1.5.11/doc/tin.defaults	Wed Jan 30 23:32:33 2002
-@@ -55,7 +55,7 @@
++++ tin-1.5.11/doc/tin.defaults	Wed Feb  6 12:44:43 2002
+@@ -55,7 +55,10 @@
  # idea to set mm_charset here for providing a default
  # in most western countries ISO-8859-1 might be the best value
  #
 -#mm_charset=iso-8859-1
-+mm_charset=iso-8859-2
++mm_charset=ISO-8859-2
++
++# harset used for MIME (Content-Type) header in postings.
++mm_network_charset=ISO-8859-2
  
  # post_mime_encoding
  #
-@@ -63,7 +63,7 @@
+@@ -63,7 +66,7 @@
  # idea to set post_mime_encoding here for providing a default
  # in most western countries 8bit might be the best value
  #
