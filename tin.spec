@@ -1,4 +1,4 @@
-%define date 980818
+%define date 981002
 Summary:     tin News Reader
 Summary(de): tin News-Reader
 Summary(fr): Lecteur de news tin.
@@ -10,9 +10,10 @@ Release:     1
 Serial:      104980818
 Copyright:   distributable
 Group:       Applications/News
-Source:      ftp://ftp.tin.org/pub/tin/tinpre-1.4-%{date}.tar.bz2
+Source:      ftp://ftp.tin.org/pub/news/clients/tin/current/tinpre-1.4-%{date}.tar.bz2
 URL:         http://www.tin.org/
 BuildRoot:   /tmp/%{name}-%{version}-root
+
 %description
 Tin is a full-screen easy to use Netnews reader. It can read news locally
 (i.e., /var/spool/news) or remotely (rtin or tin -r option) via a NNTP
