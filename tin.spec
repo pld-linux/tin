@@ -88,7 +88,7 @@ install -d $RPM_BUILD_ROOT/{etc,etc/tin,%{_bindir},%{_mandir}/man1,%{_mandir}/ma
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-%{__install} doc/tin.defaults $RPM_BUILD_ROOT%{_sysconfdir}/tin
+install doc/tin.defaults $RPM_BUILD_ROOT%{_sysconfdir}/tin
 echo ".so tin.1" > $RPM_BUILD_ROOT%{_mandir}/man1/rtin.1
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Network/News
