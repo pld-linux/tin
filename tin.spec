@@ -6,7 +6,7 @@ Summary(tr):	Haber okuyucu
 Name:		tin
 Version:	1.5.12
 Release:	5
-Epoch:		1
+Epoch:		5
 License:	distributable
 Group:		Applications/News
 Source0:	ftp://ftp.tin.org/pub/news/clients/tin/1.5/%{name}-%{version}.tar.bz2
