@@ -11,7 +11,7 @@ Release:	1
 Epoch:		5
 License:	distributable
 Group:		Applications/News
-Source0:	ftp://ftp.tin.org/pub/news/clients/tin/1.5/%{name}-%{version}.tar.bz2
+Source0:	ftp://ftp.tin.org/pub/news/clients/tin/v1.5/%{name}-%{version}.tar.bz2
 Source1:	%{name}.desktop
 Source2:	%{name}.attributes
 Patch0:		%{name}-enable_coloring.patch
