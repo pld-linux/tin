@@ -1,3 +1,8 @@
+# 
+#   You can build tin with:
+# --define 'domain_name your.domain'
+# --define 'default_server default.nntp.server' 
+# 
 Summary:	tin News Reader
 Summary(de):	tin News-Reader
 Summary(fr):	Lecteur de news tin
@@ -7,7 +12,7 @@ Summary(tr):	Haber okuyucu
 Summary(uk):	tin - програма для читання телеконференц╕й Usenet
 Name:		tin
 Version:	1.5.16
-Release:	1
+Release:	2
 Epoch:		5
 License:	distributable
 Group:		Applications/News
@@ -86,13 +91,17 @@ LDFLAGS="%{rpmldflags} -lpcre"
 	--disable-mime-strict-charset \
 	--with-pcre \
 	--with-ncurses \
+	--enable-curses \
+	--with-screen=ncurses \
 	--with-nov-dir=%{_var}/spool/news \
 	--with-spooldir=%{_var}/spool/news \
 	--disable-locale \
 	--with-gpg=%{_bindir}/gpg \
 	--with-mailer=%{_libdir}/sendmail \
 	--enable-ipv6 \
-	--disable-debug
+	--disable-debug \
+	%{?domain_name:--with-domain-name=%{domain_name}} \
+	%{?default_server:--with-nntp-default-server=%{default_server}}
 
 %{__make} -C src
 
