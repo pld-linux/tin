@@ -1,8 +1,8 @@
-# 
+#
 #   You can build tin with:
 # --define 'domain_name your.domain'
-# --define 'default_server default.nntp.server' 
-# 
+# --define 'default_server default.nntp.server'
+#
 Summary:	tin News Reader
 Summary(de):	tin News-Reader
 Summary(fr):	Lecteur de news tin
