@@ -1,4 +1,4 @@
-%define date 19990805
+%define date 1990927
 Summary:	tin News Reader
 Summary(de):	tin News-Reader
 Summary(fr):	Lecteur de news tin.
@@ -35,7 +35,6 @@ usr/spool/news) oder entfernt (Option 'rtin' bzw. 'tin -r') über einen
 NNTP-Server (Network News Transport Protocol) eingesetzt werden.
 
 %description -l fr
-
 Tin est un lecteur de news plein écran facile à utiliser. Il peut lire des
 articles localement (i.e. /usr/spool/news) ou à distance ('rtin' ou 'tin -r')
 via un serveur NNTP (Network News Transport Protocol).
