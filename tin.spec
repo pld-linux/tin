@@ -131,8 +131,9 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc README MANIFEST doc/{CHANGES,TODO,DEBUG_REFS,WHATSNEW,*.txt}
-%verify(not md5 mtime size) %config(noreplace) %{_sysconfdir}/tin/tinrc
-%verify(not md5 mtime size) %config(noreplace) %{_sysconfdir}/tin/attributes
+%dir %{_sysconfdir}/%{name}
+%verify(not md5 mtime size) %config(noreplace) %{_sysconfdir}/%{name}/tinrc
+%verify(not md5 mtime size) %config(noreplace) %{_sysconfdir}/%{name}/attributes
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
 %{_mandir}/man5/tin.5*
