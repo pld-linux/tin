@@ -5,7 +5,7 @@ Summary(pl):	tin - czytnik newsów
 Summary(tr):	Haber okuyucu
 Name:		tin
 Version:	1.5.9
-Release:	3
+Release:	4
 Epoch:		3
 License:	Distributable
 Group:		Applications/News
@@ -17,6 +17,7 @@ Patch0:		%{name}-enable_coloring.patch
 Patch1:		%{name}-with_system_pcre.patch
 Patch2:		%{name}-ncurses.patch
 Patch3:		%{name}-range.patch
+Patch4:		%{name}-ctrl-h.patch
 URL:		http://www.tin.org/
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	pcre-devel
@@ -63,6 +64,7 @@ okuyabilir.
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
+%patch4 -p1
 
 %build
 %configure \
@@ -89,7 +91,7 @@ install -d $RPM_BUILD_ROOT/{etc,%{_bindir},%{_mandir}/man1,%{_applnkdir}/Network
 %{__install} doc/tin.defaults $RPM_BUILD_ROOT%{_sysconfdir}
 echo ".so tin.1" > $RPM_BUILD_ROOT%{_mandir}/man1/rtin.1
 
-%{__install} %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Network/New
+%{__install} %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Network/News
 
 %find_lang %{name}
 
@@ -104,4 +106,4 @@ rm -rf $RPM_BUILD_ROOT
 %verify(not md5 mtime size) %config(noreplace) %{_sysconfdir}/tin.defaults
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man*/*
-%{_applnkdir}/Network/New/*
+%{_applnkdir}/Network/News/*
