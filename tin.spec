@@ -114,14 +114,12 @@ rm -f $RPM_BUILD_ROOT%{_bindir}/url_handler.sh
 
 %find_lang %{name}
 
-gzip -9nf README MANIFEST doc/{CHANGES,TODO,DEBUG_REFS,WHATSNEW,*.txt}
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc *.gz doc/*.gz
+%doc README MANIFEST doc/{CHANGES,TODO,DEBUG_REFS,WHATSNEW,*.txt}
 %verify(not md5 mtime size) %config(noreplace) %{_sysconfdir}/tin/tinrc
 %verify(not md5 mtime size) %config(noreplace) %{_sysconfdir}/tin/attributes
 %attr(755,root,root) %{_bindir}/*
