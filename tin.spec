@@ -92,9 +92,3 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 
 %{_mandir}/man1/*
-
-%changelog
-* Mon May 31 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
-  [1.4pre19990517-1]
-- based on my old spec for tin,
-- spec rewrited by PLD team.
