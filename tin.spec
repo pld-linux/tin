@@ -5,7 +5,7 @@ Summary(pl):	tin - czytnik newsów
 Summary(tr):	Haber okuyucu
 Name:		tin
 Version:	1.5.12
-Release:	2
+Release:	3
 Epoch:		3
 License:	distributable
 Group:		Applications/News
@@ -107,5 +107,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc *.gz doc/*.gz
 %verify(not md5 mtime size) %config(noreplace) %{_sysconfdir}/tin/tin.defaults
 %attr(755,root,root) %{_bindir}/*
-%{_mandir}/man*/*
+%{_mandir}/man1/*
+%{_mandir}/man5/tin.5*
 %{_applnkdir}/Network/News/*
