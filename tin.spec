@@ -1,4 +1,4 @@
-%define date 980730
+%define date 980818
 Summary:     tin News Reader
 Summary(de): tin News-Reader
 Summary(fr): Lecteur de news tin.
@@ -7,7 +7,7 @@ Summary(tr): Haber okuyucu
 Name:        tin
 Version:     1.4pre%{date}
 Release:     1
-Serial:      104980730
+Serial:      104980818
 Copyright:   distributable
 Group:       Applications/News
 Source:      ftp://ftp.tin.org/pub/tin/tinpre-1.4-%{date}.tar.bz2
