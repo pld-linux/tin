@@ -5,7 +5,7 @@ Summary(pl):	tin - czytnik newsów
 Summary(tr):	Haber okuyucu
 Name:		tin
 Version:	1.5.11
-Release:	2
+Release:	3
 Epoch:		3
 License:	distributable
 Group:		Applications/News
@@ -75,7 +75,7 @@ LDFLAGS="%{rpmldflags} -lpcre"
 	--with-ncurses \
 	--with-nov-dir=%{_var}/spool/news \
 	--with-spooldir=%{_var}/spool/news \
-	--disable-locale \
+	--enable-locale \
 	--with-gpg=%{_bindir}/gpg \
 	--with-mailer=%{_libdir}/sendmail \
 	--enable-ipv6 \
