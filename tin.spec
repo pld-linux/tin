@@ -1,18 +1,19 @@
-%define date 981225
-Summary:     tin News Reader
-Summary(de): tin News-Reader
-Summary(fr): Lecteur de news tin.
-Summary(pl): tin - czytnik newsów
-Summary(tr): Haber okuyucu
-Name:        tin
-Version:     1.4pre%{date}
-Release:     1
-Serial:      104%{date}
-Copyright:   distributable
-Group:       Applications/News
-Source:      ftp://ftp.tin.org/pub/news/clients/tin/current/tinpre-1.4-%{date}.tar.bz2
-URL:         http://www.tin.org/
-BuildRoot:   /tmp/%{name}-%{version}-root
+%define date 19990216
+Summary:	tin News Reader
+Summary(de):	tin News-Reader
+Summary(fr):	Lecteur de news tin.
+Summary(pl):	tin - czytnik newsów
+Summary(tr):	Haber okuyucu
+Name:		tin
+Version:	1.4pre%{date}
+Release:	1
+Serial:		104%{date}
+Copyright:	distributable
+Group:		Applications/News
+Source:		ftp://ftp.tin.org/pub/news/clients/tin/current/tinpre-1.4-%{date}.tar.bz2
+URL:		http://www.tin.org/
+Requires:	ncurses => 4.2-12
+BuildRoot:	/tmp/%{name}-%{version}-root
 
 %description
 Tin is a full-screen easy to use Netnews reader. It can read news locally
@@ -76,18 +77,27 @@ install doc/tin.defaults $RPM_BUILD_ROOT/etc
 echo ".so tin.1" > $RPM_BUILD_ROOT/usr/man/man1/rtin.1
 
 gzip -9nf $RPM_BUILD_ROOT/usr/man/man1/*
+bzip -9 {README,MANIFEST,doc/{CHANGES,TODO,DEBUG_REFS,WHATSNEW,*.txt}}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644, root, root, 755)
-%doc README MANIFEST doc/{CHANGES,TODO,DEBUG_REFS,WHATSNEW,*.txt}
+%doc {README,MANIFEST,doc/{CHANGES,TODO,DEBUG_REFS,WHATSNEW,*.txt}}.bz2
+
 %verify(not md5 mtime size) %config(noreplace) /etc/tin.defaults
-%attr(755, root, root) /usr/bin/*
-%attr(644, root,  man) /usr/man/man1/*
+
+%attr(755,root,root) /usr/bin/*
+
+/usr/man/man1/*
 
 %changelog
+* Tue Feb 23 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [1.4pre19990216-1]
+- removed man group from man pages,
+- added bzipping2 %doc.
+
 * Sun Dec 27 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [1.4pre981225-1]
 - added gzipping man pages,
