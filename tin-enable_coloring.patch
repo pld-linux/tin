@@ -1,21 +1,21 @@
-diff -urN tin-1.5.9.org/src/init.c tin-1.5.9/src/init.c
---- tin-1.5.9.org/src/init.c	Fri Jul 13 12:42:12 2001
-+++ tin-1.5.9/src/init.c	Mon Jul 23 23:40:22 2001
-@@ -299,7 +299,7 @@
- 	0,		/* col_title (initialised later) */
- 	2,		/* word_h_display_marks */
+diff -urN tin-1.5.14.org/src/init.c tin-1.5.14/src/init.c
+--- tin-1.5.14.org/src/init.c	Thu Sep 19 10:14:14 2002
++++ tin-1.5.14/src/init.c	Thu Sep 26 17:14:58 2002
+@@ -328,7 +328,7 @@
+ #endif /* HAVE_COLOR */
  	TRUE,		/* word_highlight */
+ #ifdef HAVE_COLOR
 -	FALSE,		/* use_color */
 +	TRUE,		/* use_color */
  #endif /* HAVE_COLOR */
  	TRUE,		/* add_posted_to_filter */
  	TRUE,		/* advertising */
-@@ -600,7 +600,7 @@
+@@ -629,7 +629,7 @@
  
  #ifdef HAVE_COLOR
  	preinit_colors();
 -	use_color = FALSE;
 +	use_color = TRUE;
- 	word_highlight = TRUE;
  #endif /* HAVE_COLOR */
  
+ 	word_highlight = TRUE;
