@@ -5,15 +5,17 @@ Summary(pl):	tin - czytnik newsów
 Summary(tr):	Haber okuyucu
 Name:		tin
 Version:	1.5.12
-Release:	1
+Release:	2
 Epoch:		3
 License:	distributable
 Group:		Applications/News
-Group(de):	Applikationen/News
-Group(es):	Aplicaciones/News
-Group(fr):	Applications/News
+Group(cs):	Aplikace/News
+Group(de):	Anwendungen/News
+Group(es):	Aplicaciones/Noticias
+Group(fr):	Applications/Nouvelles
 Group(pl):	Aplikacje/News
 Group(pt):	Aplicações/News
+Group(pt_BR):	Aplicações/News
 Group(ru):	ğÒÉÌÏÖÅÎÉÑ/îÏ×ÏÓÔÉ
 Source0:	ftp://ftp.tin.org/pub/news/clients/tin/1.5/%{name}-%{version}.tar.bz2
 Source1:	%{name}.desktop
