@@ -67,7 +67,7 @@ okuyabilir.
 %patch4 -p1
 
 %build
-%configure \
+%configure2_13 \
 	--enable-nls \
 	--enable-color \
 	--with-ncurses \
