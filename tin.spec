@@ -14,7 +14,7 @@ Group(pl):	Aplikacje/News
 Source0:	ftp://ftp.tin.org/pub/news/clients/tin/unstable/snapshots/%{name}-%{version}.tar.bz2
 Source1:	%{name}.desktop
 Patch0:		%{name}-enable_coloring.patch
-Patch1:		%{name}-with_system_pcre.patch
+#Patch1:		%{name}-with_system_pcre.patch
 Patch2:		%{name}-ncurses.patch
 Patch3:		%{name}-range.patch
 Patch4:		%{name}-ctrl-h.patch
@@ -61,7 +61,7 @@ okuyabilir.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
+#%patch1 -p1
 %patch2 -p1
 %patch3 -p1
 %patch4 -p1
