@@ -6,7 +6,7 @@ diff -uNr tin-1.5.6.orig/src/Makefile.in tin-1.5.6/src/Makefile.in
  DEBUG	= @ENABLE_DEBUG@ -DDEBUG #-DDEBUG_NEWSRC -DPROFILE -DDEBUG_REFS
  CANLOCK = # -DUSE_CANLOCK # -DEVIL_INSIDE
 -CPPOPTS	= @DEFS@ -I. -I../include -I$(top_builddir)/pcre -I$(top_srcdir)/pcre -DLOCALEDIR=\"$(prefix)/@DATADIRNAME@/locale\" -I$(INCDIR) $(DEBUG) $(CANLOCK) @CPPFLAGS@
-+CPPOPTS = @DEFS@ -I/usr/include/ncurses -I. -I../include -DLOCALEDIR=\"$(prefix)/@DATADIRNAME@/\"
++CPPOPTS = @DEFS@ -I. -I../include -DLOCALEDIR=\"$(prefix)/@DATADIRNAME@/\"
  CFLAGS	= @CFLAGS@
  
  LD	= $(CC)
