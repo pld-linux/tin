@@ -83,7 +83,7 @@ okuyabilir.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/{etc,%{_bindir},%{_mandir}/man1,%{_applnkdir}/Network/News}
+install -d $RPM_BUILD_ROOT/{etc,%{_bindir},%{_mandir}/man1,%{_mandir}/man5,%{_applnkdir}/Network/News}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
