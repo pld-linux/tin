@@ -7,7 +7,7 @@ Name:		tin
 Version:	1.5.10
 Release:	1
 Epoch:		3
-License:	Distributable
+License:	distributable
 Group:		Applications/News
 Group(de):	Applikationen/News
 Group(pl):	Aplikacje/News
