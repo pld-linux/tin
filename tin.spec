@@ -10,7 +10,11 @@ Epoch:		3
 License:	distributable
 Group:		Applications/News
 Group(de):	Applikationen/News
+Group(es):	Aplicaciones/News
+Group(fr):	Applications/News
 Group(pl):	Aplikacje/News
+Group(pt):	AplicaГУes/News
+Group(ru):	Приложения/Новости
 Source0:	ftp://ftp.tin.org/pub/news/clients/tin/1.5/%{name}-%{version}.tar.bz2
 Source1:	%{name}.desktop
 Patch0:		%{name}-enable_coloring.patch
