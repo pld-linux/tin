@@ -4,9 +4,8 @@ Summary(fr):	Lecteur de news tin
 Summary(pl):	tin - czytnik newsów
 Summary(tr):	Haber okuyucu
 Name:		tin
-Version:	1.5.7
-Release:	2
-Epoch:		2
+Version:	1.5.8
+Release:	1
 License:	distributable
 Group:		Applications/News
 Group(de):	Applikationen/News
