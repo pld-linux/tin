@@ -1,4 +1,4 @@
-%define date 19990624
+%define date 19990805
 Summary:	tin News Reader
 Summary(de):	tin News-Reader
 Summary(fr):	Lecteur de news tin.
@@ -55,8 +55,7 @@ aracýlýðýyla uzaktan ('rtin' ya da 'tin -r' seçeneði ile) okuyabilir.
 
 %build
 CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
-./configure %{_target_platform} \
-	--prefix=%{_prefix} \
+%configure \
 	--enable-color \
 	--with-ncurses \
 	--with-nov-dir=/var/spool/news \
