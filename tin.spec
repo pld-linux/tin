@@ -4,7 +4,7 @@ Summary(fr):	Lecteur de news tin.
 Summary(pl):	tin - czytnik newsów
 Summary(tr):	Haber okuyucu
 Name:		tin
-Version:	1.4.1
+Version:	1.4.2
 Release:	1
 Serial:		2
 Copyright:	distributable
