@@ -20,6 +20,7 @@ URL:		http://www.tin.org/
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	pcre-devel
 BuildRequires:	metamail
+Requires:	urlview
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -89,7 +90,9 @@ install -d $RPM_BUILD_ROOT/{etc,%{_bindir},%{_mandir}/man1,%{_mandir}/man5,%{_ap
 %{__install} doc/tin.defaults $RPM_BUILD_ROOT%{_sysconfdir}
 echo ".so tin.1" > $RPM_BUILD_ROOT%{_mandir}/man1/rtin.1
 
-%{__install} %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Network/News
+install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Network/News
+
+rm -f $RPM_BUILD_ROOT%{_bindir}/url_handler.sh
 
 %find_lang %{name}
 
