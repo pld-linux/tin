@@ -69,7 +69,7 @@ CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
 %install
 rm -rf $RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT/{etc,usr/{bin,share/man/man1}}
+install -d $RPM_BUILD_ROOT/{etc,%{_bindir},%{_mandir}/man1}}
 
 install -s src/tin $RPM_BUILD_ROOT%{_bindir}
 ln -sf tin $RPM_BUILD_ROOT%{_bindir}/rtin
@@ -88,9 +88,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc {README,MANIFEST,doc/{CHANGES,TODO,DEBUG_REFS,WHATSNEW,*.txt}}.gz
-
 %verify(not md5 mtime size) %config(noreplace) /etc/tin.defaults
-
 %attr(755,root,root) %{_bindir}/*
 
 %{_mandir}/man1/*
