@@ -6,6 +6,7 @@ Summary(tr):	Haber okuyucu
 Name:		tin
 Version:	1.5.4
 Release:	2
+Serial:		2
 Copyright:	distributable
 Group:		Applications/News
 Group(pl):	Aplikacje/News
