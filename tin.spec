@@ -10,8 +10,10 @@ Release:	1
 Serial:		1
 Copyright:	distributable
 Group:		Applications/News
+Group(pl):	Aplikacje/News
 Source:		ftp://ftp.tin.org/pub/news/clients/tin/current/tinpre-1.4-%{date}.tar.bz2
 URL:		http://www.tin.org/
+BuildPrereq:	ncurses-devel
 Requires:	ncurses => 4.2-12
 BuildRoot:	/tmp/%{name}-%{version}-root
 
@@ -53,7 +55,8 @@ aracýlýðýyla uzaktan ('rtin' ya da 'tin -r' seçeneði ile) okuyabilir.
 
 %build
 CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
-./configure --prefix=/usr \
+./configure %{_target} \
+	--prefix=/usr \
 	--enable-color \
 	--with-ncurses \
 	--with-nov-dir=/var/spool/news \
@@ -76,15 +79,15 @@ install doc/tin.defaults $RPM_BUILD_ROOT/etc
 
 echo ".so tin.1" > $RPM_BUILD_ROOT/usr/man/man1/rtin.1
 
-gzip -9nf $RPM_BUILD_ROOT/usr/man/man1/*
-bzip2 -9 {README,MANIFEST,doc/{CHANGES,TODO,DEBUG_REFS,WHATSNEW,*.txt}}
+gzip -9nf $RPM_BUILD_ROOT/usr/man/man1/* \
+	{README,MANIFEST,doc/{CHANGES,TODO,DEBUG_REFS,WHATSNEW,*.txt}}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
-%defattr(644, root, root, 755)
-%doc {README,MANIFEST,doc/{CHANGES,TODO,DEBUG_REFS,WHATSNEW,*.txt}}.bz2
+%defattr(644,root,root,755)
+%doc {README,MANIFEST,doc/{CHANGES,TODO,DEBUG_REFS,WHATSNEW,*.txt}}.gz
 
 %verify(not md5 mtime size) %config(noreplace) /etc/tin.defaults
 
