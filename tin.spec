@@ -67,7 +67,7 @@ export CPPFLAGS LDFLAGS
 	--enable-locale \
 	--disable-debug
 
-make -C src
+%{__make} -C src
 
 %install
 rm -rf $RPM_BUILD_ROOT
