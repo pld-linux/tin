@@ -71,8 +71,8 @@ rm -rf $RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT/{etc,usr/{bin,share/man/man1}}
 
-install -s src/tin $RPM_BUILD_ROOT/usr/bin
-ln -sf tin $RPM_BUILD_ROOT/usr/bin/rtin
+install -s src/tin $RPM_BUILD_ROOT%{_bindir}
+ln -sf tin $RPM_BUILD_ROOT%{_bindir}/rtin
 
 install doc/tin.1 $RPM_BUILD_ROOT%{_mandir}/man1
 install doc/tin.defaults $RPM_BUILD_ROOT/etc
@@ -91,7 +91,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %verify(not md5 mtime size) %config(noreplace) /etc/tin.defaults
 
-%attr(755,root,root) /usr/bin/*
+%attr(755,root,root) %{_bindir}/*
 
 %{_mandir}/man1/*
 
