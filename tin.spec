@@ -16,6 +16,7 @@ Source1:	%{name}.desktop
 Patch0:		%{name}-enable_coloring.patch
 Patch1:		%{name}-ncurses.patch
 Patch2:		%{name}-range.patch
+Patch3:		%{name}-charset.patch
 URL:		http://www.tin.org/
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	pcre-devel
@@ -62,6 +63,7 @@ okuyabilir.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 %build
 LDFLAGS="%{rpmldflags} -lpcre"
@@ -73,7 +75,7 @@ LDFLAGS="%{rpmldflags} -lpcre"
 	--with-ncurses \
 	--with-nov-dir=%{_var}/spool/news \
 	--with-spooldir=%{_var}/spool/news \
-	--enable-locale \
+	--disable-locale \
 	--with-gpg=%{_bindir}/gpg \
 	--with-mailer=%{_libdir}/sendmail \
 	--enable-ipv6 \
