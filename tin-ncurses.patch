@@ -1,0 +1,32 @@
+diff -urN tin-1.5.7.org/configure tin-1.5.7/configure
+--- tin-1.5.7.org/configure	Sun Oct 29 00:17:41 2000
++++ tin-1.5.7/configure	Sun Oct 29 00:24:23 2000
+@@ -785,6 +785,7 @@
+ ALL_LINGUAS="de et en_GB"
+ 
+ ### Checks for programs
++CFLAGS="$CFLAGS -I/usr/include/ncurses"
+ save_CFLAGS="$CFLAGS"
+ # Extract the first word of "gcc", so it can be a program name with args.
+ set dummy gcc; ac_word=$2
+@@ -3628,7 +3629,8 @@
+ 	do
+ 		for cf_header in \
+ 			curses.h \
+-			ncurses.h
++			ncurses.h \
++			ncurses/ncurses.h
+ 		do
+ 			if egrep "NCURSES_[VH]" $cf_incdir/$cf_header 1>&5 2>&1; then
+ 				cf_cv_ncurses_header=$cf_incdir/$cf_header
+diff -urN tin-1.5.7.org/configure.in tin-1.5.7/configure.in
+--- tin-1.5.7.org/configure.in	Sun Oct 29 00:17:41 2000
++++ tin-1.5.7/configure.in	Sun Oct 29 00:24:32 2000
+@@ -82,6 +82,7 @@
+ ALL_LINGUAS="de et en_GB"
+ 
+ ### Checks for programs
++CFLAGS="$CFLAGS -I/usr/include/ncurses"
+ save_CFLAGS="$CFLAGS"
+ AC_PROG_CC
+ AC_PROG_GCC_TRADITIONAL
