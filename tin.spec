@@ -5,7 +5,7 @@ Summary(pl):	tin - czytnik newsów
 Summary(tr):	Haber okuyucu
 Name:		tin
 Version:	1.4.3
-Release:	1
+Release:	2
 Serial:		2
 Copyright:	distributable
 Group:		Applications/News
@@ -15,7 +15,7 @@ Patch0:		tin-enable_coloring.patch
 Patch1:		tin-with_system_pcre.patch
 URL:		http://www.tin.org/
 BuildRequires:	ncurses-devel >= 5.0
-Requires:	ncurses => 5.0
+BuildRequires:	pcre-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
