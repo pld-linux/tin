@@ -7,12 +7,13 @@ Summary(tr):	Haber okuyucu
 Summary(uk):	tin - програма для читання телеконференц╕й Usenet
 Name:		tin
 Version:	1.5.13
-Release:	1
+Release:	2
 Epoch:		5
 License:	distributable
 Group:		Applications/News
 Source0:	ftp://ftp.tin.org/pub/news/clients/tin/1.5/%{name}-%{version}.tar.bz2
 Source1:	%{name}.desktop
+Source2:	%{name}.attributes
 Patch0:		%{name}-enable_coloring.patch
 Patch1:		%{name}-ncurses.patch
 Patch2:		%{name}-range.patch
@@ -97,16 +98,20 @@ LDFLAGS="%{rpmldflags} -lpcre"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/{etc,etc/tin,%{_bindir},%{_mandir}/man1,%{_mandir}/man5,%{_applnkdir}/Network/News}
+install -d $RPM_BUILD_ROOT/{etc,etc/tin,%{_bindir},%{_mandir}/man1,%{_mandir}/man5,%{_applnkdir}/Network/News,%{_libdir}/news/}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
 install doc/tin.defaults $RPM_BUILD_ROOT%{_sysconfdir}/tin
+install %{SOURCE2} $RPM_BUILD_ROOT%{_sysconfdir}/tin/attributes
 rm -f $RPM_BUILD_ROOT%{_mandir}/man1/rtin.1
 echo ".so tin.1" > $RPM_BUILD_ROOT%{_mandir}/man1/rtin.1
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Network/News
+# for historic reasons /var/lib/news still must exists...
+ln -sf /etc/tin/attributes $RPM_BUILD_ROOT/%{_libdir}/news/attributes
+ln -sf /etc/tin/tin.defaults $RPM_BUILD_ROOT/%{_libdir}/news/tinrc
 
 rm -f $RPM_BUILD_ROOT%{_bindir}/url_handler.sh
 
@@ -121,7 +126,9 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc *.gz doc/*.gz
 %verify(not md5 mtime size) %config(noreplace) %{_sysconfdir}/tin/tin.defaults
+%verify(not md5 mtime size) %config(noreplace) %{_sysconfdir}/tin/attributes
 %attr(755,root,root) %{_bindir}/*
+%attr(755,root,news) %dir %{_libdir}/news/*
 %{_mandir}/man1/*
 %{_mandir}/man5/tin.5*
 %{_applnkdir}/Network/News/*
