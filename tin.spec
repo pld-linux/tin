@@ -5,7 +5,7 @@ Summary(pl):	tin - czytnik newsów
 Summary(tr):	Haber okuyucu
 Name:		tin
 Version:	1.5.12
-Release:	5
+Release:	6
 Epoch:		5
 License:	distributable
 Group:		Applications/News
@@ -89,6 +89,8 @@ install -d $RPM_BUILD_ROOT/{etc,etc/tin,%{_bindir},%{_mandir}/man1,%{_mandir}/ma
 	DESTDIR=$RPM_BUILD_ROOT
 
 install doc/tin.defaults $RPM_BUILD_ROOT%{_sysconfdir}/tin
+rm -f $RPM_BUILD_ROOT%{_mandir}/man1/rtin.1
+echo ".so tin.1" > $RPM_BUILD_ROOT%{_mandir}/man1/rtin.1
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Network/News
 
