@@ -6,7 +6,8 @@ Summary(tr):	Haber okuyucu
 Name:		tin
 Version:	1.5.8
 Release:	1
-License:	distributable
+Epoch:		2
+License:	Distributable
 Group:		Applications/News
 Group(de):	Applikationen/News
 Group(pl):	Aplikacje/News
