@@ -69,7 +69,7 @@ CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
 %install
 rm -rf $RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT/{etc,%{_bindir},%{_mandir}/man1}}
+install -d $RPM_BUILD_ROOT/{etc,%{_bindir},%{_mandir}/man1}
 
 install -s src/tin $RPM_BUILD_ROOT%{_bindir}
 ln -sf tin $RPM_BUILD_ROOT%{_bindir}/rtin
