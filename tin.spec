@@ -6,7 +6,7 @@ Summary(ru):	tin - программа для чтения телеконференций Usenet
 Summary(tr):	Haber okuyucu
 Summary(uk):	tin - програма для читання телеконференц╕й Usenet
 Name:		tin
-Version:	1.5.15
+Version:	1.5.16
 Release:	1
 Epoch:		5
 License:	distributable
@@ -125,4 +125,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
 %{_mandir}/man5/tin.5*
+%{_mandir}/man5/mmdf*
 %{_applnkdir}/Network/News/*
