@@ -14,7 +14,7 @@ Source:		ftp://ftp.tin.org/pub/news/clients/tin/current/%{name}-%{version}.tar.b
 URL:		http://www.tin.org/
 BuildRequires:	ncurses-devel >= 5.0
 Requires:	ncurses => 5.0
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Tin is a full-screen easy to use Netnews reader. It can read news locally
