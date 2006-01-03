@@ -25,6 +25,7 @@ Patch1:		%{name}-ncurses.patch
 Patch2:		%{name}-range.patch
 Patch3:		%{name}-charset.patch
 URL:		http://www.tin.org/
+BuildRequires:	bison
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	pcre-devel
 Requires:	urlview
