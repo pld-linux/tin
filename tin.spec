@@ -139,4 +139,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/*
 %{_mandir}/man5/tin.5*
 %{_mandir}/man5/mmdf*
-%{_desktopdir}/*
+%{_desktopdir}/*.desktop
