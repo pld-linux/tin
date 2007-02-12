@@ -4,12 +4,12 @@
 # --define 'default_server default.nntp.server'
 #
 Summary:	tin News Reader
-Summary(de):	tin News-Reader
-Summary(fr):	Lecteur de news tin
-Summary(pl):	tin - czytnik newsСw
-Summary(ru):	tin - программа для чтения телеконференций Usenet
-Summary(tr):	Haber okuyucu
-Summary(uk):	tin - програма для читання телеконференц╕й Usenet
+Summary(de.UTF-8):   tin News-Reader
+Summary(fr.UTF-8):   Lecteur de news tin
+Summary(pl.UTF-8):   tin - czytnik newsцЁw
+Summary(ru.UTF-8):   tin - п©я─п╬пЁя─п╟п╪п╪п╟ п╢п╩я▐ я┤я┌п╣п╫п╦я▐ я┌п╣п╩п╣п╨п╬п╫я└п╣я─п╣п╫я├п╦п╧ Usenet
+Summary(tr.UTF-8):   Haber okuyucu
+Summary(uk.UTF-8):   tin - п©я─п╬пЁя─п╟п╪п╟ п╢п╩я▐ я┤п╦я┌п╟п╫п╫я▐ я┌п╣п╩п╣п╨п╬п╫я└п╣я─п╣п╫я├я√п╧ Usenet
 Name:		tin
 Version:	1.9.1
 Release:	1
@@ -43,39 +43,39 @@ Group level, Thread level and Article level. Use the 'h' (help)
 command to view a list of the commands available at a particular
 level.
 
-%description -l de
+%description -l de.UTF-8
 Tin ist ein Vollbild-Newsreader. Das Programm kann entweder lokal
-(z.B. usr/spool/news) oder entfernt (Option 'rtin' bzw. 'tin -r') Эber
+(z.B. usr/spool/news) oder entfernt (Option 'rtin' bzw. 'tin -r') ц╪ber
 einen NNTP-Server (Network News Transport Protocol) eingesetzt werden.
 
-%description -l fr
-Tin est un lecteur de news plein Иcran facile Ю utiliser. Il peut lire
-des articles localement (i.e. /usr/spool/news) ou Ю distance ('rtin'
+%description -l fr.UTF-8
+Tin est un lecteur de news plein ц╘cran facile ц═ utiliser. Il peut lire
+des articles localement (i.e. /usr/spool/news) ou ц═ distance ('rtin'
 ou 'tin -r') via un serveur NNTP (Network News Transport Protocol).
 
-%description -l pl
-Tin jest peЁnoekranowym czytnikiem newsСw. Umo©liwia czytanie zarСwno
-z lokalnych zasobСw (np. z katalogu /var/spool/news jak i ze zdalnych
-(uruchamiaj╠c 'rtin' lub 'tin -r') serwerСw NNTP (Network News
+%description -l pl.UTF-8
+Tin jest peе┌noekranowym czytnikiem newsцЁw. Umoе╪liwia czytanie zarцЁwno
+z lokalnych zasobцЁw (np. z katalogu /var/spool/news jak i ze zdalnych
+(uruchamiajд┘c 'rtin' lub 'tin -r') serwerцЁw NNTP (Network News
 Transport Protocol).
 
-%description -l ru
-Tin - это простая в использовании полноэкранная программа для чтения
-телеконференций Usenet. Она может читать телеконференции с локальной
-(т.е. /var/spool/news) или удаленной (rtin или опция tin -r) по NNTP
+%description -l ru.UTF-8
+Tin - я█я┌п╬ п©я─п╬я│я┌п╟я▐ п╡ п╦я│п©п╬п╩я▄п╥п╬п╡п╟п╫п╦п╦ п©п╬п╩п╫п╬я█п╨я─п╟п╫п╫п╟я▐ п©я─п╬пЁя─п╟п╪п╪п╟ п╢п╩я▐ я┤я┌п╣п╫п╦я▐
+я┌п╣п╩п╣п╨п╬п╫я└п╣я─п╣п╫я├п╦п╧ Usenet. п·п╫п╟ п╪п╬п╤п╣я┌ я┤п╦я┌п╟я┌я▄ я┌п╣п╩п╣п╨п╬п╫я└п╣я─п╣п╫я├п╦п╦ я│ п╩п╬п╨п╟п╩я▄п╫п╬п╧
+(я┌.п╣. /var/spool/news) п╦п╩п╦ я┐п╢п╟п╩п╣п╫п╫п╬п╧ (rtin п╦п╩п╦ п╬п©я├п╦я▐ tin -r) п©п╬ NNTP
 (Network News Transport Protocol).
 
-%description -l tr
-Tin, metin ekranda ГalЩЧan kolay kullanЩlЩr bir USENET haber
+%description -l tr.UTF-8
+Tin, metin ekranda ц╖alд╠е÷an kolay kullanд╠lд╠r bir USENET haber
 okuyucusudur. Haberleri yerel olarak (/usr/spool/news), ya da bir NNTP
-sunucusu aracЩlЩПЩyla uzaktan ('rtin' ya da 'tin -r' seГeneПi ile)
+sunucusu aracд╠lд╠д÷д╠yla uzaktan ('rtin' ya da 'tin -r' seц╖eneд÷i ile)
 okuyabilir.
 
-%description -l uk
-Tin - це проста у використанн╕ повноекранна програма для читання
-телеконференц╕й Usenet. Вона дозволя╓ читати телеконференц╕╖ як з
-локально╖ машини (тобто /var/spool/news) так ╕ з в╕ддалено╖ (rtin або
-опц╕я tin -r) по NNTP (Network News Transport Protocol).
+%description -l uk.UTF-8
+Tin - я├п╣ п©я─п╬я│я┌п╟ я┐ п╡п╦п╨п╬я─п╦я│я┌п╟п╫п╫я√ п©п╬п╡п╫п╬п╣п╨я─п╟п╫п╫п╟ п©я─п╬пЁя─п╟п╪п╟ п╢п╩я▐ я┤п╦я┌п╟п╫п╫я▐
+я┌п╣п╩п╣п╨п╬п╫я└п╣я─п╣п╫я├я√п╧ Usenet. п▓п╬п╫п╟ п╢п╬п╥п╡п╬п╩я▐я■ я┤п╦я┌п╟я┌п╦ я┌п╣п╩п╣п╨п╬п╫я└п╣я─п╣п╫я├я√я≈ я▐п╨ п╥
+п╩п╬п╨п╟п╩я▄п╫п╬я≈ п╪п╟я┬п╦п╫п╦ (я┌п╬п╠я┌п╬ /var/spool/news) я┌п╟п╨ я√ п╥ п╡я√п╢п╢п╟п╩п╣п╫п╬я≈ (rtin п╟п╠п╬
+п╬п©я├я√я▐ tin -r) п©п╬ NNTP (Network News Transport Protocol).
 
 %prep
 %setup -q
