@@ -4,12 +4,12 @@
 # --define 'default_server default.nntp.server'
 #
 Summary:	tin News Reader
-Summary(de.UTF-8):   tin News-Reader
-Summary(fr.UTF-8):   Lecteur de news tin
-Summary(pl.UTF-8):   tin - czytnik newsów
-Summary(ru.UTF-8):   tin - программа для чтения телеконференций Usenet
-Summary(tr.UTF-8):   Haber okuyucu
-Summary(uk.UTF-8):   tin - програма для читання телеконференцій Usenet
+Summary(de.UTF-8):	tin News-Reader
+Summary(fr.UTF-8):	Lecteur de news tin
+Summary(pl.UTF-8):	tin - czytnik newsów
+Summary(ru.UTF-8):	tin - программа для чтения телеконференций Usenet
+Summary(tr.UTF-8):	Haber okuyucu
+Summary(uk.UTF-8):	tin - програма для читання телеконференцій Usenet
 Name:		tin
 Version:	1.9.1
 Release:	1
