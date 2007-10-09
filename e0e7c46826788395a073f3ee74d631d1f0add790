@@ -1,0 +1,3 @@
+- added passing LDFLAGS="-s' to ./configure environment instead stripping in
+  install,
+- cosmetics.
