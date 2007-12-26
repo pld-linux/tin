@@ -5,6 +5,5 @@ Comment=Tin - A Usenet newsreader
 Comment[pl]=Tin - czytnik newsów 
 Exec=rtin
 Terminal=true
-Encoding=UTF-8
 Categories=Network;News;
 # vi: encoding=utf-8
