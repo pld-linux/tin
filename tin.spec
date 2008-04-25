@@ -11,13 +11,13 @@ Summary(ru.UTF-8):	tin - программа для чтения телеконф
 Summary(tr.UTF-8):	Haber okuyucu
 Summary(uk.UTF-8):	tin - програма для читання телеконференцій Usenet
 Name:		tin
-Version:	1.9.2
+Version:	1.9.3
 Release:	1
 Epoch:		5
 License:	distributable
 Group:		Applications/News
-Source0:	ftp://ftp.tin.org/pub/news/clients/tin/v1.9/%{name}-%{version}.tar.bz2
-# Source0-md5:	251094ddf0e2b059227a4b02187c5f3e
+Source0:	ftp://ftp.tin.org/pub/news/clients/tin/v1.9/snapshots/%{name}-%{version}.tar.bz2
+# Source0-md5:	01812db5784aa4957a170c3ea7639958
 Source1:	%{name}.desktop
 Source2:	%{name}.attributes
 Patch0:		%{name}-enable_coloring.patch
@@ -88,8 +88,8 @@ Tin - це проста у використанні повноекранна п�
 LDFLAGS="%{rpmldflags} -lpcre"
 %configure2_13 \
 	--disable-debug \
-	--disable-locale \
-	--disable-mime-strict-charset \
+	#--disable-locale \
+	#--disable-mime-strict-charset \
 	--enable-color \
 	--enable-curses \
 	--enable-ipv6 \
