@@ -16,7 +16,7 @@ Release:	1
 Epoch:		5
 License:	distributable
 Group:		Applications/News
-Source0:	ftp://ftp.tin.org/pub/news/clients/tin/v1.9/snapshots/%{name}-%{version}.tar.bz2
+Source0:	ftp://ftp.tin.org/pub/news/clients/tin/v1.9/snapshots/%{name}-%{version}.tar.gz
 # Source0-md5:	01812db5784aa4957a170c3ea7639958
 Source1:	%{name}.desktop
 Source2:	%{name}.attributes
