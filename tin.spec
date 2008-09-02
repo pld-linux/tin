@@ -88,8 +88,6 @@ Tin - це проста у використанні повноекранна п�
 LDFLAGS="%{rpmldflags} -lpcre"
 %configure2_13 \
 	--disable-debug \
-	#--disable-locale \
-	#--disable-mime-strict-charset \
 	--enable-color \
 	--enable-curses \
 	--enable-ipv6 \
