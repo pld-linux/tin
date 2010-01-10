@@ -26,6 +26,7 @@ Patch2:		%{name}-range.patch
 Patch3:		%{name}-charset.patch
 URL:		http://www.tin.org/
 BuildRequires:	bison
+BuildRequires:	gettext-devel
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	pcre-devel
 BuildRequires:	uudeview-devel
@@ -93,10 +94,10 @@ LDFLAGS="%{rpmldflags}"
 	--enable-curses \
 	--enable-ipv6 \
 	--enable-nls \
-	--with-gpg=/usr/bin/gpg \
-	--with-ispell=/usr/bin/ispell \
+	--with-gpg=%{_bindir}/gpg \
+	--with-ispell=%{_bindir}/ispell \
 	--with-mailer=/usr/lib/sendmail \
-	--with-metamail=/usr/bin/metamail \
+	--with-metamail=%{_bindir}/metamail \
 	--with-ncurses \
 	--with-nov-dir=%{_var}/spool/news \
 	--with-pcre \
