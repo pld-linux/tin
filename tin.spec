@@ -28,6 +28,7 @@ URL:		http://www.tin.org/
 BuildRequires:	bison
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	pcre-devel
+BuildRequires:	uudeview-devel
 Requires:	urlview
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -85,7 +86,7 @@ Tin - це проста у використанні повноекранна п�
 %patch3 -p1
 
 %build
-LDFLAGS="%{rpmldflags} -lpcre"
+LDFLAGS="%{rpmldflags}"
 %configure2_13 \
 	--disable-debug \
 	--enable-color \
