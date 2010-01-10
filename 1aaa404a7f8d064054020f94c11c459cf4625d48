@@ -1,0 +1,2 @@
+- added urlview to Require list,
+- removed url_handler.sh from %{_bindir},
