@@ -12,7 +12,7 @@ Summary(tr.UTF-8):	Haber okuyucu
 Summary(uk.UTF-8):	tin - програма для читання телеконференцій Usenet
 Name:		tin
 Version:	1.9.4
-Release:	3
+Release:	4
 Epoch:		5
 License:	distributable
 Group:		Applications/News
@@ -141,5 +141,4 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
 %{_mandir}/man5/tin.5*
-%{_mandir}/man5/mmdf*
 %{_desktopdir}/*.desktop
