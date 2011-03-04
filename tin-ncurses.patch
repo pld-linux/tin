@@ -20,3 +20,14 @@ diff -urN tin-1.5.9.org/configure.in tin-1.5.9/configure.in
  save_CFLAGS="$CFLAGS"
  AC_PROG_CC
  AC_PROG_GCC_TRADITIONAL
+--- tin-1.9.6/src/Makefile.in~	2010-01-01 11:08:12.000000000 +0100
++++ tin-1.9.6/src/Makefile.in	2011-03-04 21:30:48.932221763 +0100
+@@ -73,7 +73,7 @@
+ INTL_LIBS	= @INTLLIBS@
+ PCRE_LIBS	= @PCREDIR_LIBS@ @PCREDIR_MAKE@ -L../pcre -lpcre
+ LIBS		= @LIBS@
+-LINK_LIBS	= $(PCRE_LIBS) $(CANLIB) @LIBS@ $(INTL_LIBS)
++LINK_LIBS	= $(PCRE_LIBS) $(CANLIB) @LIBS@ $(INTL_LIBS) -ltinfo
+ 
+ # Where do you want the binary & manual page installed?
+ DESTDIR	= @DESTDIR@
