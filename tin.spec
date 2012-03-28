@@ -12,7 +12,7 @@ Summary(tr.UTF-8):	Haber okuyucu
 Summary(uk.UTF-8):	tin - програма для читання телеконференцій Usenet
 Name:		tin
 Version:	1.9.6
-Release:	4
+Release:	5
 Epoch:		5
 License:	distributable
 Group:		Applications/News
