@@ -26,7 +26,7 @@ Patch2:		%{name}-range.patch
 Patch3:		%{name}-charset.patch
 URL:		http://www.tin.org/
 BuildRequires:	bison
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	pcre-devel
 BuildRequires:	uudeview-devel
