@@ -125,8 +125,6 @@ echo ".so tin.1" > $RPM_BUILD_ROOT%{_mandir}/man1/rtin.1
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 
-%{__rm} $RPM_BUILD_ROOT%{_bindir}/url_handler.sh
-
 # file conflict mmdf between mutt and tin
 %{__rm} $RPM_BUILD_ROOT%{_mandir}/man5/mmdf.5*
 
