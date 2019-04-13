@@ -12,7 +12,7 @@ Summary(tr.UTF-8):	Haber okuyucu
 Summary(uk.UTF-8):	tin - програма для читання телеконференцій Usenet
 Name:		tin
 Version:	2.0.1
-Release:	10
+Release:	11
 Epoch:		5
 License:	distributable
 Group:		Applications/News
@@ -27,6 +27,9 @@ Patch3:		%{name}-charset.patch
 URL:		http://www.tin.org/
 BuildRequires:	bison
 BuildRequires:	gettext-tools
+BuildRequires:	gsasl-devel
+BuildRequires:	libicu-devel
+BuildRequires:	libidn-devel
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	pcre-devel
 BuildRequires:	uudeview-devel
@@ -117,15 +120,15 @@ install -d $RPM_BUILD_ROOT/{etc,etc/tin,%{_bindir},%{_mandir}/man1,%{_mandir}/ma
 
 install doc/tin.defaults $RPM_BUILD_ROOT%{_sysconfdir}/tin/tinrc
 install %{SOURCE2} $RPM_BUILD_ROOT%{_sysconfdir}/tin/attributes
-rm -f $RPM_BUILD_ROOT%{_mandir}/man1/rtin.1
+%{__rm} $RPM_BUILD_ROOT%{_mandir}/man1/rtin.1
 echo ".so tin.1" > $RPM_BUILD_ROOT%{_mandir}/man1/rtin.1
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 
-rm -f $RPM_BUILD_ROOT%{_bindir}/url_handler.sh
+%{__rm} $RPM_BUILD_ROOT%{_bindir}/url_handler.sh
 
 # file conflict mmdf between mutt and tin
-rm -f $RPM_BUILD_ROOT%{_mandir}/man5/mmdf.5*
+%{__rm} $RPM_BUILD_ROOT%{_mandir}/man5/mmdf.5*
 
 %find_lang %{name}
 
@@ -138,7 +141,18 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_sysconfdir}/%{name}
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/%{name}/tinrc
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/%{name}/attributes
-%attr(755,root,root) %{_bindir}/*
-%{_mandir}/man1/*
+%attr(755,root,root) %{_bindir}/metamutt
+%attr(755,root,root) %{_bindir}/opt-case.pl
+%attr(755,root,root) %{_bindir}/rtin
+%attr(755,root,root) %{_bindir}/tin
+%attr(755,root,root) %{_bindir}/tinews.pl
+%attr(755,root,root) %{_bindir}/url_handler.pl
+%attr(755,root,root) %{_bindir}/w2r.pl
+%{_mandir}/man1/opt-case.pl.1*
+%{_mandir}/man1/rtin.1*
+%{_mandir}/man1/tin.1*
+%{_mandir}/man1/tinews.pl.1*
+%{_mandir}/man1/url_handler.pl.1*
+%{_mandir}/man1/w2r.pl.1*
 %{_mandir}/man5/tin.5*
-%{_desktopdir}/*.desktop
+%{_desktopdir}/tin.desktop
