@@ -9,4 +9,4 @@ diff -urN tin-1.5.7.org/src/newsrc.c tin-1.5.7/src/newsrc.c
 +	unsigned long long i;
  	t_bool flag = FALSE;
  
- #ifdef DEBUG_NEWSRC
+ #ifdef DEBUG

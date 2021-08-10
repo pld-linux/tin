@@ -4,7 +4,7 @@ diff -urN tin-1.6.1.org/doc/tin.defaults tin-1.6.1/doc/tin.defaults
 @@ -1,3 +1,4 @@
 +# tin configuration file V1.3.7
  #
- # TIN 1.5 - a threaded newsreader
+ # TIN 1.9.4 - a threaded newsreader
  #
 @@ -55,7 +56,12 @@
  # idea to set mm_charset here for providing a default
