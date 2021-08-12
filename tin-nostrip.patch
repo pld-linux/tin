@@ -1,0 +1,11 @@
+--- tin-2.0.1/src/Makefile.in.orig	2021-08-12 15:06:49.834866042 +0200
++++ tin-2.0.1/src/Makefile.in	2021-08-12 15:09:22.534180247 +0200
+@@ -385,7 +385,7 @@
+ install : $(DESTDIR)$(INS_BINARY_DIR)
+ 	@$(MAKE) all
+ 	@$(ECHO) "Installing $(EXE) v$(VER) to $(DESTDIR)$(INS_BINARY_DIR)/$(PROJEXE) ..."
+-	@$(INSTALL) -s $(BINDIR)/$(EXE) $(DESTDIR)$(INS_BINARY_DIR)/$(PROJEXE)
++	@$(INSTALL) $(BINDIR)/$(EXE) $(DESTDIR)$(INS_BINARY_DIR)/$(PROJEXE)
+ 	@( $(CD) $(DESTDIR)$(INS_BINARY_DIR) && $(RM) -f r$(PROJEXE) && $(LN) $(PROJEXE) r$(PROJEXE) )
+ 	@$(MAKE) install_helpers
+ 	@$(MAKE) install_manpage

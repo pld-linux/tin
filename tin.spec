@@ -24,6 +24,7 @@ Patch0:		%{name}-enable_coloring.patch
 Patch1:		%{name}-ncurses.patch
 Patch2:		%{name}-range.patch
 Patch3:		%{name}-charset.patch
+Patch4:		%{name}-nostrip.patch
 URL:		http://www.tin.org/
 BuildRequires:	bison
 BuildRequires:	gettext-tools
@@ -88,6 +89,7 @@ Tin - це проста у використанні повноекранна п�
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
+%patch4 -p1
 
 %build
 LDFLAGS="%{rpmldflags}"
