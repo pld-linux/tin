@@ -1,26 +1,20 @@
-diff -urN tin-1.6.1.org/doc/tin.defaults tin-1.6.1/doc/tin.defaults
---- tin-1.6.1.org/doc/tin.defaults	Sat Jul 12 15:49:45 2003
-+++ tin-1.6.1/doc/tin.defaults	Mon Aug 18 11:19:31 2003
-@@ -1,3 +1,4 @@
-+# tin configuration file V1.3.7
- #
- # TIN 1.9.4 - a threaded newsreader
- #
-@@ -55,7 +56,12 @@
+--- tin-2.4.5/doc/tin.defaults~	2017-05-03 17:47:32.000000000 +0000
++++ tin-2.4.5/doc/tin.defaults	2021-08-14 07:50:47.703578241 +0000
+@@ -55,7 +55,12 @@
  # idea to set mm_charset here for providing a default
  # in most western countries ISO-8859-1 might be the best value
  #
 -#mm_charset=iso-8859-1
 +mm_charset=ISO-8859-2
 +
-+# harset used for MIME (Content-Type) header in postings.
++# charset used for MIME (Content-Type) header in postings.
 +
 +mm_network_charset=ISO-8859-2
 +
  
  # post_mime_encoding
  #
-@@ -63,7 +69,7 @@
+@@ -63,7 +68,7 @@
  # idea to set post_mime_encoding here for providing a default
  # in most western countries 8bit might be the best value
  #
@@ -29,7 +23,7 @@ diff -urN tin-1.6.1.org/doc/tin.defaults tin-1.6.1/doc/tin.defaults
  
  # mail_mime_encoding
  #
-@@ -144,3 +150,8 @@
+@@ -155,3 +160,8 @@
  # to change this setting if your configuration differs
  #
  #subscriptionsfile=/usr/lib/news/subscriptions

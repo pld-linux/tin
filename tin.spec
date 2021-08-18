@@ -11,20 +11,17 @@ Summary(ru.UTF-8):	tin - программа для чтения телеконф
 Summary(tr.UTF-8):	Haber okuyucu
 Summary(uk.UTF-8):	tin - програма для читання телеконференцій Usenet
 Name:		tin
-Version:	2.0.1
-Release:	14
+Version:	2.4.5
+Release:	1
 Epoch:		5
 License:	distributable
 Group:		Applications/News
 Source0:	ftp://ftp.tin.org/pub/news/clients/tin/stable/%{name}-%{version}.tar.gz
-# Source0-md5:	d05622db1712a78a2b92aa27904befc2
+# Source0-md5:	303016b1aa8d845cc79d6bd6754a81a8
 Source1:	%{name}.desktop
 Source2:	%{name}.attributes
 Patch0:		%{name}-enable_coloring.patch
-Patch1:		%{name}-ncurses.patch
-Patch2:		%{name}-range.patch
-Patch3:		%{name}-charset.patch
-Patch4:		%{name}-nostrip.patch
+Patch1:		%{name}-charset.patch
 URL:		http://www.tin.org/
 BuildRequires:	bison
 BuildRequires:	gettext-tools
@@ -87,9 +84,6 @@ Tin - це проста у використанні повноекранна п�
 %setup -q
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
-%patch3 -p1
-%patch4 -p1
 
 %build
 LDFLAGS="%{rpmldflags}"
@@ -120,15 +114,17 @@ install -d $RPM_BUILD_ROOT/{etc,etc/tin,%{_bindir},%{_mandir}/man1,%{_mandir}/ma
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-install doc/tin.defaults $RPM_BUILD_ROOT%{_sysconfdir}/tin/tinrc
-install %{SOURCE2} $RPM_BUILD_ROOT%{_sysconfdir}/tin/attributes
+cp -p doc/tin.defaults $RPM_BUILD_ROOT%{_sysconfdir}/tin/tinrc
+cp -p %{SOURCE2} $RPM_BUILD_ROOT%{_sysconfdir}/tin/attributes
 %{__rm} $RPM_BUILD_ROOT%{_mandir}/man1/rtin.1
 echo ".so tin.1" > $RPM_BUILD_ROOT%{_mandir}/man1/rtin.1
 
-install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
+cp -p %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 
 # file conflict mmdf between mutt and tin
 %{__rm} $RPM_BUILD_ROOT%{_mandir}/man5/mmdf.5*
+# file conflict mbox between manpages and tin
+%{__rm} $RPM_BUILD_ROOT%{_mandir}/man5/mbox.5*
 
 %find_lang %{name}
 
@@ -155,4 +151,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/url_handler.pl.1*
 %{_mandir}/man1/w2r.pl.1*
 %{_mandir}/man5/tin.5*
+%{_mandir}/man5/rtin.5*
 %{_desktopdir}/tin.desktop
