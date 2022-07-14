@@ -11,13 +11,13 @@ Summary(ru.UTF-8):	tin - программа для чтения телеконф
 Summary(tr.UTF-8):	Haber okuyucu
 Summary(uk.UTF-8):	tin - програма для читання телеконференцій Usenet
 Name:		tin
-Version:	2.4.5
-Release:	3
+Version:	2.6.1
+Release:	1
 Epoch:		5
 License:	distributable
 Group:		Applications/News
-Source0:	ftp://ftp.tin.org/pub/news/clients/tin/stable/%{name}-%{version}.tar.gz
-# Source0-md5:	303016b1aa8d845cc79d6bd6754a81a8
+Source0:	ftp://ftp.tin.org/pub/news/clients/tin/stable/%{name}-%{version}.tar.bz2
+# Source0-md5:	8465726c46ff414f748cc7d8bf76b764
 Source1:	%{name}.desktop
 Source2:	%{name}.attributes
 Patch0:		%{name}-enable_coloring.patch
@@ -27,9 +27,9 @@ BuildRequires:	bison
 BuildRequires:	gettext-tools
 BuildRequires:	gsasl-devel
 BuildRequires:	libicu-devel
-BuildRequires:	libidn-devel
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	pcre-devel
+BuildRequires:	pkgconfig
 BuildRequires:	uudeview-devel
 Requires:	urlview
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
