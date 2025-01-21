@@ -22,7 +22,9 @@ Source1:	%{name}.desktop
 Source2:	%{name}.attributes
 Patch0:		%{name}-enable_coloring.patch
 Patch1:		%{name}-charset.patch
+Patch2:		gcc14.patch
 URL:		http://www.tin.org/
+BuildRequires:	autoconf >= 2.52
 BuildRequires:	bison
 BuildRequires:	gettext-tools
 BuildRequires:	gsasl-devel
@@ -82,12 +84,15 @@ Tin - це проста у використанні повноекранна п�
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
+%patch -P0 -p1
+%patch -P1 -p1
+%patch -P2 -p1
 
 %build
+%{__autoconf}
 LDFLAGS="%{rpmldflags}"
-%configure2_13 \
+%configure \
+	CPP="%__cpp" \
 	--disable-debug \
 	--enable-color \
 	--enable-curses \

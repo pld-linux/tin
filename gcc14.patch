@@ -1,0 +1,13 @@
+--- tin-2.6.1/configure.in.orig	2021-12-26 15:00:08.000000000 +0100
++++ tin-2.6.1/configure.in	2025-01-21 19:25:45.244995698 +0100
+@@ -1206,8 +1206,8 @@
+ #if HAVE_SYS_TIME_H
+ #include <sys/time.h>
+ #endif],
+-[struct timeval *tv;
+-struct timezone *tz;
++[struct timeval tv;
++struct timezone tz;
+ gettimeofday(&tv, &tz);],
+ ac_cv_func_gettimeofday_2args=yes, ac_cv_func_gettimeofday_2args=no)
+ AC_MSG_RESULT($ac_cv_func_gettimeofday_2args)
